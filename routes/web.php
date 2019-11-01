@@ -80,6 +80,9 @@ Route::resource('censado', 'Admin\RegisteredsController');
 //Ruta de recursos para Tutores
 Route::resource('tutor', 'Admin\TutorsController');
 
+//Ruta para eliminar el tutor de un censado, pero no borra el tutor.
+Route::get('censado/{tutor}/{censado}', 'Admin\TutorsController@eliminarTutor')->name('tutor.eliminar');
+
 //Ruta de recursos para Voluntarios
 Route::resource('voluntario', 'Admin\VolunteersController');
 

@@ -14,6 +14,7 @@ use App\Registered;
 use App\Healthinsurance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Residence;
 
 class RegisteredsController extends Controller
 {
@@ -50,7 +51,9 @@ class RegisteredsController extends Controller
 
         $treatments = Treatment::all();
 
-        return view('admin.censo.crearcensado', compact('localidades', 'schoolings', 'healthinsurances', 'pensions', 'pathologies', 'treatments'));
+        $residences = Residence::all();
+
+        return view('admin.censo.crearcensado', compact('localidades', 'schoolings', 'healthinsurances', 'pensions', 'pathologies', 'treatments', 'residences'));
     }
 
     /**
@@ -61,6 +64,11 @@ class RegisteredsController extends Controller
      */
     public function store(Request $request)
     {
+
+
+        // $ultimo = Censado::last();
+        // $numero = $ultimo->numero;
+        // $numero++;
 
         $censado = new Registered();
 
@@ -86,7 +94,9 @@ class RegisteredsController extends Controller
         $censado->entidadcertificado = $request->entidadcertificado;
         $censado->obrasocial_id = $request->obrasocial_id;
         $censado->observacion = $request->observacion;
-        $censado->numerolegajo = 'A01';
+        $censado->numerolegajo = 'CE01';
+
+
         $censado->save();
 
         //ver attach institucioneucativa
@@ -101,8 +111,7 @@ class RegisteredsController extends Controller
         //tratamiento
         $censado->treatments()->attach($request->tratamiento);
 
-
-        return view('home');
+        return redirect()->route('censado.show', $censado->id);
     }
 
     /**
@@ -115,9 +124,13 @@ class RegisteredsController extends Controller
     {
         $registered = Registered::find($id);
 
-        $tutors = Tutor::all();
+        $tutors = Registered::with('tutors')->find($id); //manda solo los tutores de ese censado
 
-        return view('admin.censo.vercensado', compact('registered', 'tutors'));
+        $localidades = Location::all();
+
+        $healthinsurances = Healthinsurance::all();
+
+        return view('admin.censo.vercensado', compact('registered', 'tutors', 'localidades', 'healthinsurances'));
     }
 
     /**
@@ -151,6 +164,42 @@ class RegisteredsController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $censado = Registered::find($id);
+
+        $tutor = $censado->tutors;
+
+        //recorrer tutor del censado y eliminarlo
+        foreach ($tutor as $tut) {
+            $censado->tutors()->detach($tut->id);
+        }
+
+        //recorrer y eliminar patologias de censado
+        $registered = $censado->pathologies;
+        foreach ($registered as $item) {
+            $censado->pathologies()->detach($item->id);
+        }
+
+        //recorrer y eliminar tratamientos de censado
+        $registered = $censado->treatments;
+        foreach ($registered as $item) {
+            $censado->treatments()->detach($item->id);
+        }
+
+        //recorrer y eliminar pensiones de censado
+        $registered = $censado->pensions;
+        foreach ($registered as $item) {
+            $censado->pensions()->detach($item->id);
+        }
+
+        //recorrer y eliminar escuelas de censado
+        $registered = $censado->schoolings;
+        foreach ($registered as $item) {
+            $censado->schoolings()->detach($item->id);
+        }
+
+        $censado->delete();
+
+        return back();
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers\Admin;
 
 use App\Tutor;
+use App\Registered;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -68,9 +69,11 @@ class TutorsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($tutor, $censado)
     {
-        //
+        $tutor = Tutor::find($tutor);
+
+        return view('admin.censo.vertutor', \compact('tutor', 'censado'));
     }
 
     /**
@@ -104,6 +107,31 @@ class TutorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //ESTE METODO NO ESTA LISTO NI FUNCIONANDO
+        $tutor = tutor::find($id);
+        $censados = $tutor->registereds;
+
+        foreach ($censados as $censado) {
+            $tutor->registereds()->detach($censado->id);
+        }
+
+        // $tutor->delete();
+
+        return back();
+    }
+
+    public function eliminarTutor($tutorid, $censadoid)
+    {
+        $censado = Registered::find($censadoid);
+
+        $tutors = $censado->tutors;
+
+        foreach ($tutors as $tutor) {
+            if ($tutor->id == $tutorid) {
+                $tutor->registereds()->detach($censado->id);
+            }
+        }
+
+        return back();
     }
 }
