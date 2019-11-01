@@ -20,7 +20,7 @@ class PostsController extends Controller
 
     public function index(){
 
-        $publicaciones = Post::orderBy('id', 'DESC')->get();
+        $publicaciones = Post::orderBy('id', 'DESC')->paginate(10);
         
         return view('admin.post.index', compact('publicaciones'));
 

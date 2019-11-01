@@ -31,3 +31,7 @@
 .iradio_flat-yellow {
     background: url(https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/yellow.png) no-repeat;
 }
+
+.nav .open > a:hover{
+       background-color:#043; 
+}

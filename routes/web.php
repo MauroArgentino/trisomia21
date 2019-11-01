@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::post('admin/home/contacto', 'MensajesController@store')->name('admin.mensajes.store');
 
-		Route::get('admin/home/bandejaentrada', 'MensajesController@index')->name('admin.bandejaentrada')->middleware();
+		Route::get('admin/home/bandejaentrada', 'MensajesController@index')->name('admin.mensaje.index');
 
 		Route::get('admin/home/bandejaentrada/mensaje/{id}', 'MensajesController@show')->name('admin.leermensaje')->middleware();
 

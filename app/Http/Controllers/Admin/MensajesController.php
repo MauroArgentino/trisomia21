@@ -19,7 +19,7 @@ class MensajesController extends Controller
     {
         $mensajes = Mensaje::orderBy('id', 'DESC')->get();
         $cantidad_mensajes = Mensaje::where('estado', 'NO_LEIDO')->count();
-        return view('admin.mensaje.bandejaentrada', compact('cantidad_mensajes', 'mensajes'));
+        return view('admin.mensaje.index', compact('cantidad_mensajes', 'mensajes'));
     }
 
     /**

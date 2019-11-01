@@ -95,7 +95,7 @@
               <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                   <tbody>
-                  @foreach ($mensajes as $mensaje)
+                  @forelse ($mensajes as $mensaje)
                    <tr>
                     <td>
                       <div class="icheck-primary">
@@ -114,7 +114,15 @@
                    {{--  <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td> --}}
                     <td class="mailbox-date">{{ $mensaje->created_at }}</td>
                   </tr>
-                  @endforeach
+                  @empty
+                  <div class="" style="height: 300px">
+                    <div class="container d-flex h-100">
+                      <div class="row justify-content-center align-self-center ml-3">
+                       <em>No hay mensajes en la bandeja de entrada.</em>
+                     </div>
+                   </div>
+                 </div>
+                  @endforelse
                   </tbody>
                 </table>
                 <!-- /.table -->

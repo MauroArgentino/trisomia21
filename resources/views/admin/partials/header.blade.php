@@ -96,7 +96,7 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">{{ $cantidad_mensajes ?? '' }} Notificaciones</span>
           <div class="dropdown-divider"></div>
-          <a href="{{ route('admin.bandejaentrada') }}" class="dropdown-item">
+          <a href="{{ route('admin.mensaje.index') }}" class="dropdown-item">
             <i class="fas fa-envelope mr-3"></i> {{ $cantidad_mensajes ?? '' }} Nuevos Mensajes
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>

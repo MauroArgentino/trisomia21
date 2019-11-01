@@ -55,6 +55,7 @@
                     </tbody>
                 </table>
         </div><!-- /.panel-body -->
+        {{ $publicaciones->links() }}
     </div><!-- /.panel panel-default -->
 </div>
 
