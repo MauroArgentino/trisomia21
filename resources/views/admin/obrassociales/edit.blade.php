@@ -1,5 +1,5 @@
-@extends('layouts.dashboard')
-@section('content')
+@extends('admin.layouts.app')
+@section('main-content')
 <div class="card col-6">
     <div class="card-body">
         <div class="card-text">

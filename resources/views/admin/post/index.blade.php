@@ -1,8 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('main-content')
- <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+<div class="content">
     <h2 class="text-center">Administración de Publicaciones</h2>
     <br />
     <div class="card card-default">
@@ -32,7 +31,7 @@
                                 <td>{{$post->id}}</td>
                                 <td>{{$post->titulo}}</td>
                                 <td>
-                                    {!! App\Model\Admin\Post::getExcerpt($post->contenido) !!}
+                                    {!! App\Post::getExcerpt($post->contenido) !!}
                                 </td>
                                 <td class="text-center"><input type="checkbox" class="published" data-id="{{$post->id}}" @if ($post->estado == 'PUBLISHED') checked @endif></td>
                                 <td data-toggle="tooltip" title="{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->updated_at)->format('d-m-Y H:i:s')}}">
@@ -219,6 +218,5 @@
         </div>
     </div>
 </div>
-  </div>
-  <!-- /.content-wrapper -->
+
 @endsection

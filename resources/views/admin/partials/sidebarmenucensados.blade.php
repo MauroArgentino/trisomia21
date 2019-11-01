@@ -18,13 +18,13 @@
     </a>
     <ul class="nav nav-treeview">
       <li class="nav-item">
-        <a href="{{ route('censado.create') }}" class="nav-link">
+        <a href="{{ route('admin.censo.create') }}" class="nav-link">
             <i class="fa fa-plus nav-icon"></i>
           <p>Nuevo censado</p>
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('censado.index') }}" class="nav-link">
+        <a href="{{ route('admin.censo.index') }}" class="nav-link">
             <i class="fa fa-list nav-icon"></i>
           <p>Ver todos</p>
         </a>
@@ -41,7 +41,7 @@
     </a>
     <ul class="nav nav-treeview">
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="{{ route('admin.tutor.create') }}" class="nav-link">
             <i class="fa fa-plus nav-icon"></i>
           <p>Nuevo tutor</p>
         </a>
@@ -64,13 +64,13 @@
   </a>
   <ul class="nav nav-treeview">
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="{{ route('admin.voluntario.create') }}" class="nav-link">
         <i class="fa fa-plus nav-icon"></i>
         <p>Nuevo voluntario</p>
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="{{ route('admin.voluntario.index') }}" class="nav-link">
         <i class="fa fa-list nav-icon"></i>
         <p>Ver todos</p>
       </a>

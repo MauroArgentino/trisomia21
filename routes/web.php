@@ -38,6 +38,33 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::post('admin/home/evento/nuevo', 'AgendasController@store')->name('admin.evento.store')->middleware();
 
+		// Rutas de Censados
+
+		Route::get('admin/home/censado/nuevo', 'RegisteredsController@create')->name('admin.censo.create');
+
+		Route::get('admin/home/censado/listado', 'RegisteredsController@index')->name('admin.censo.index');
+
+		//Ruta para eliminar el tutor de un censado, pero no borra el tutor.
+		Route::get('censado/{tutor}/{censado}', 'TutorsController@eliminarTutor')->name('tutor.eliminar');
+
+		//Ruta de recursos para Tutores
+		Route::get('admin/home/tutor/nuevo', 'TutorsController@create')->name('admin.tutor.create');
+
+
+
+		//Ruta de recursos para Voluntarios
+		Route::get('admin/home/voluntario/nuevo', 'VolunteersController@create')->name('admin.voluntario.create');
+
+		Route::get('admin/home/voluntario/listado', 'VolunteersController@index')->name('admin.voluntario.index');
+
+		Route::get('admin/home/voluntario/editar/{id}', 'VolunteersController@edit')->name('admin.voluntario.edit');
+
+		Route::get('admin/home/voluntario/show/{id}', 'VolunteersController@show')->name('admin.voluntario.show');
+
+		Route::post('admin/home/voluntario/guardando', 'VolunteersController@store')->name('admin.voluntario.store');
+
+		Route::post('admin/home/voluntario/actualizando', 'VolunteersController@update')->name('admin.voluntario.update');
+		
 		// Admin auth Routes
 
 		Route::get('admin-login','Auth\LoginController@showLoginForm')->name('admin.login');
@@ -67,22 +94,7 @@ Route::get('admin-logout','Auth\LoginController@logout')->name('admin.logout');
 Route::get('/', 'Web\HomeController@index');
 
 
-Route::get('crearcensado', function () {
-    return view('admin.censo.crearcensado');
-})->name('admin.censo.create');
 
-
-//Ruta de recursos para Censados
-Route::resource('censado', 'Admin\RegisteredsController');
-
-//Ruta de recursos para Tutores
-Route::resource('tutor', 'Admin\TutorsController');
-
-//Ruta para eliminar el tutor de un censado, pero no borra el tutor.
-Route::get('censado/{tutor}/{censado}', 'Admin\TutorsController@eliminarTutor')->name('tutor.eliminar');
-
-//Ruta de recursos para Voluntarios
-Route::resource('voluntario', 'Admin\VolunteersController');
 
 
 // Route::get('listarcensado', function () {

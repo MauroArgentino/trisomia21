@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 use Conner\Tagging\Taggable;
 use Intervention\Image\Facades\Image;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Sotrage;
 use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
@@ -34,10 +33,6 @@ class Post extends Model
 
     public function user_modified(){
         return $this->belongsTo(User::class, 'user_modified_id', 'id');
-    }
-
-    public function imagen(){
-        return $this->belongsTo(Imagen::class);
     }
 
     public static function setImagen($imagen, $actual = false) {

@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
+
 @section('main-content')
-<div class="content-wrapper">
 <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
@@ -11,7 +11,7 @@
                     </div>
 
                     <!-- inicio formulario -->
-                    <form action="{{route('voluntario.update',$voluntario->id)}}" method="POST">
+                    <form action="{{route('admin.voluntario.update',$voluntario->id)}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
@@ -50,7 +50,7 @@
                                                             <i class="fas fa-user-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="apellido" value="{{$voluntario->apellido}}" placeholder="Igrese Apellido">
+                                                    <input type="text" class="form-control" id="" name="apellido" value="{{$voluntario->apellido}}" placeholder="Ingrese Apellido">
                                                 </div>
                                             </div>
 
@@ -63,7 +63,7 @@
                                                             <i class="far fa-address-card"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="dni" value="{{$voluntario->dni}}" placeholder="Igrese DNI">
+                                                    <input type="text" class="form-control" id="" name="dni" value="{{$voluntario->dni}}" placeholder="Ingrese DNI">
                                                 </div>
                                             </div>
 
@@ -111,7 +111,7 @@
                                                             <i class="fas fa-map-marker-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="direccion" value="{{$voluntario->direccion}}" placeholder="Igrese Dirección">
+                                                    <input type="text" class="form-control" id="" name="direccion" value="{{$voluntario->direccion}}" placeholder="Ingrese Dirección">
                                                 </div>
                                             </div>
 
@@ -124,7 +124,7 @@
                                                             <i class="fas fa-phone-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="telefono" value="{{$voluntario->telefono}}" placeholder="Igrese Número de Teléfono">
+                                                    <input type="text" class="form-control" id="" name="telefono" value="{{$voluntario->telefono}}" placeholder="Ingrese Número de Teléfono">
                                                 </div>
                                             </div>
 
@@ -137,7 +137,7 @@
                                                             <i class="fas fa-at"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="email" class="form-control" id="" name="email" value="{{$voluntario->email}}" placeholder="Igrese Número de Teléfono">
+                                                    <input type="email" class="form-control" id="" name="email" value="{{$voluntario->email}}" placeholder="Ingrese Número de Teléfono">
                                                 </div>
                                             </div>
 
@@ -155,7 +155,7 @@
                                                             <i class="fas fa-briefcase"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="ocupacion" value="{{$voluntario->ocupacion}}" placeholder="Igrese Ocupación">
+                                                    <input type="text" class="form-control" id="" name="ocupacion" value="{{$voluntario->ocupacion}}" placeholder="Ingrese Ocupación">
                                                 </div>
                                             </div>
 
@@ -168,7 +168,7 @@
                                                             <i class="fas fa-user-clock"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="tiempodisponible" value="{{$voluntario->tiempodisponible}}" placeholder="Igrese dia y horario disponible">
+                                                    <input type="text" class="form-control" id="" name="tiempodisponible" value="{{$voluntario->tiempodisponible}}" placeholder="Ingrese dia y horario disponible">
                                                 </div>
                                             </div>
 
@@ -199,6 +199,5 @@
                 </div>
             </div>
         </div>
-</div>
 </div>
 @endsection

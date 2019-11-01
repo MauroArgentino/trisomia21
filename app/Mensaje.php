@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Model\Web;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Model\Admin\User;
+use App\User;
 
 class Mensaje extends Model
 {

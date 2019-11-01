@@ -25,7 +25,7 @@ class HomeController extends Controller
     					   12 => 'Dic',
     	];
 
-    	$publicaciones = Post::orderBy('id', 'DESC')->where('estado', 'PUBLISHED')->paginate(4);
+    	$publicaciones = Post::orderBy('id', 'DESC')->where('estado', 'PUBLISHED')->simplePaginate(4);
        
         return view('web.index', compact('publicaciones', 'meses'));
 

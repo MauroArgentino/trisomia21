@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
+
 @section('main-content')
-<div class="content-wrapper">
 <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <!-- card -->
                 <div class="card card-primary">
                     <div class="card-header">
@@ -11,7 +11,7 @@
                     </div>
 
                     <!-- inicio formulario -->
-                    <form action="{{ route('voluntario.store') }}" method="POST">
+                    <form action="{{ route('admin.voluntario.store') }}" method="POST">
                         @csrf
                         <div class="card-body">
                                 <nav>
@@ -34,7 +34,7 @@
                                                             <i class="fas fa-user-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="nombre" placeholder="Igrese Nombre">
+                                                    <input type="text" class="form-control" id="" name="nombre" placeholder="Ingrese Nombre">
                                                 </div>
                                             </div>
 
@@ -47,7 +47,7 @@
                                                             <i class="fas fa-user-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="apellido" placeholder="Igrese Apellido">
+                                                    <input type="text" class="form-control" id="" name="apellido" placeholder="Ingrese Apellido">
                                                 </div>
                                             </div>
 
@@ -60,7 +60,7 @@
                                                             <i class="far fa-address-card"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="dni" placeholder="Igrese DNI">
+                                                    <input type="text" class="form-control" id="" name="dni" placeholder="Ingrese DNI">
                                                 </div>
                                             </div>
 
@@ -108,7 +108,7 @@
                                                             <i class="fas fa-map-marker-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="direccion" placeholder="Igrese Dirección">
+                                                    <input type="text" class="form-control" id="" name="direccion" placeholder="Ingrese Dirección">
                                                 </div>
                                             </div>
 
@@ -121,7 +121,7 @@
                                                             <i class="fas fa-phone-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="telefono" placeholder="Igrese Número de Teléfono">
+                                                    <input type="text" class="form-control" id="" name="telefono" placeholder="Ingrese Número de Teléfono">
                                                 </div>
                                             </div>
 
@@ -134,7 +134,7 @@
                                                             <i class="fas fa-at"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="email" class="form-control" id="" name="email" placeholder="Igrese Número de Teléfono">
+                                                    <input type="email" class="form-control" id="" name="email" placeholder="Ingrese Número de Teléfono">
                                                 </div>
                                             </div>
 
@@ -152,7 +152,7 @@
                                                             <i class="fas fa-briefcase"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="ocupacion" placeholder="Igrese Ocupación">
+                                                    <input type="text" class="form-control" id="" name="ocupacion" placeholder="Ingrese Ocupación">
                                                 </div>
                                             </div>
 
@@ -165,7 +165,7 @@
                                                             <i class="fas fa-user-clock"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="tiempodisponible" placeholder="Igrese dia y horario disponible">
+                                                    <input type="text" class="form-control" id="" name="tiempodisponible" placeholder="Ingrese dia y horario disponible">
                                                 </div>
                                             </div>
 
@@ -196,5 +196,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

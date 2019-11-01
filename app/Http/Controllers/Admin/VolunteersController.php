@@ -13,7 +13,7 @@ class VolunteersController extends Controller
     public function index()
     {
         $voluntarios = Volunteer::all();
-        return view('admin.voluntario.listarvoluntario', compact('voluntarios'));
+        return view('admin.voluntario.index', compact('voluntarios'));
     }
 
 
@@ -21,7 +21,7 @@ class VolunteersController extends Controller
     {
         $localidades = Location::all();
 
-        return view('admin.voluntario.crearvoluntario', compact('localidades'));
+        return view('admin.voluntario.create', compact('localidades'));
     }
 
 
@@ -45,7 +45,7 @@ class VolunteersController extends Controller
         $voluntario->numerolegajo = 'V01';
         $voluntario->save();
 
-        return redirect()->route('voluntario.index');
+        return redirect()->route('admin.voluntario.index');
     }
 
 
@@ -54,7 +54,7 @@ class VolunteersController extends Controller
         $voluntario = Volunteer::find($id);
         $localidades = Location::all();
 
-        return view('admin.voluntario.vervoluntario', compact('voluntario', 'localidades'));
+        return view('admin.voluntario.show', compact('voluntario', 'localidades'));
     }
 
 
@@ -62,7 +62,7 @@ class VolunteersController extends Controller
     {
         $voluntario = Volunteer::find($id);
         $localidades = Location::all();
-        return view('admin.voluntario.editarvoluntario', compact('voluntario', 'localidades'));
+        return view('admin.voluntario.edit', compact('voluntario', 'localidades'));
     }
 
 
@@ -70,11 +70,9 @@ class VolunteersController extends Controller
     {
         $voluntario = Volunteer::find($id);
 
-<<<<<<< HEAD
+
         $voluntario = new Volunteer();
 
-=======
->>>>>>> 1b0842a8b6217b787a2d915e1b86e45dd856467d
         $voluntario->nombre = $request->nombre;
         $voluntario->apellido = $request->apellido;
         $voluntario->dni = $request->dni;
@@ -89,13 +87,13 @@ class VolunteersController extends Controller
         $voluntario->numerolegajo = 'V01';
         $voluntario->update();
 
-        return redirect()->route('voluntario.index');
+        return redirect()->route('admin.voluntario.index');
     }
 
     public function destroy($id)
     {
         $voluntario = Volunteer::find($id);
         $voluntario->delete();
-        return redirect()->route('voluntario.index');
+        return redirect()->route('admin.voluntario.index');
     }
 }

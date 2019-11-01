@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 	<head>
-		<title>Prueba 1</title>
+		<title>Trisomia 21 V. A.</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
 		<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -17,14 +17,16 @@
 				window.scrollTo(0, 1);
 			}
 		</script>
-		<link href="{{ asset('web/css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
-		<link rel="stylesheet" href="{{ asset('web/css/single.css') }}">
-		<link href="{{ asset('web/css/style.css') }}" rel='stylesheet' type='text/css' />
+		<link href="{{ asset('web/css/bootstrap.css') }}" rel='stylesheet'>
+		<link href="{{ asset('web/css/single.css') }}" rel="stylesheet">
+		<link href="{{ asset('web/css/style.css') }}" rel='stylesheet'>
 		<link href="{{ asset('web/css/fontawesome-all.css') }}" rel="stylesheet">
-		<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
-			rel="stylesheet">
-		<link href="//fonts.googleapis.com/css?family=Signika:400,600,700&display=swap" rel="stylesheet">
-		<link href="//fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">	<body>
+		{{--  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> --}}
+		{{-- <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+			rel="stylesheet"> --}}
+		{{-- <link href="//fonts.googleapis.com/css?family=Signika:400,600,700&display=swap" rel="stylesheet"> --}}
+		<link href="//fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+<body>
 		<header>
 			<section class="">
 				@include('web.partials.navbar')
@@ -32,16 +34,12 @@
 		
 			
 		</header>
-		<body>
+		
 			<section class="main-content-agileits">
 				@yield('content')	
 			</section>
 				
-		</body>
-		<footer>
 			@include('web.partials.footer')
-		</footer>
-		
 		
 		<!-- js -->
 		<script src="{{ asset('web/js/jquery-2.2.3.min.js') }}"></script>
@@ -61,7 +59,7 @@
 		</script>
 		<!--// end-smoth-scrolling -->
 
-		<script>
+		{{-- <script>
 			$(document).ready(function () {
 				/*
 										var defaults = {
@@ -77,11 +75,7 @@
 				});
 
 			});
-		</script>
-		<a href="#home" class="scroll" id="toTop" style="display: block;">
-			<span id="toTopHover" style="opacity: 1;"> </span>
-		</a>
-
+		</script> --}}
 		<!-- //Custom-JavaScript-File-Links -->
 		<script src="{{ asset('web/js/bootstrap.js') }}"></script>
 

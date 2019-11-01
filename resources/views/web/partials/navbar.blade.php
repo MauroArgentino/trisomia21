@@ -4,7 +4,7 @@
 	<ul class="navbar-nav mr-auto">
 		<a class="navbar-brand" href="index">
 			<img src="{{ asset('web/img/ico.svg') }}" width="200" height="200" class="navbar-center">
-			trisomia 21 V.A
+			Trisomia 21 V.A.
 				
 		</a>
 		<!-- <a class="float-right">
@@ -73,10 +73,12 @@
 			</li>		
 		</ul>
 		<form action="#" method="post" class="form-inline my-2 ml-md-0 header-search navbar-nav mr-auto">
-			<input class="form-control" type="search" placeholder="Buscar" name="Search" required>
-			<button class="btn btn1 ml-2 ml-sm-0" type="submit">
+			<div class="form-group">
+			<input class="form-control mr-sm-2" style="border-radius: 5rem;" type="search" placeholder="Buscar" name="Search" required>
+			<button class="btn btn1 ml-3 ml-sm-0" type="submit">
 				<i class="fas fa-search"></i>
 			</button>
+			</div>
 		</form>
 	</div>
 </nav>

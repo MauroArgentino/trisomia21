@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
+
 @section('main-content')
-<div class="content-wrapper">
 <div class="container">
     <div class="container-fluid">
         <div class="row">
@@ -36,7 +36,7 @@
                                                             <i class="fas fa-user-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="nombre" placeholder="Igrese Nombre">
+                                                    <input type="text" class="form-control" id="" name="nombre" placeholder="Ingrese Nombre">
                                                 </div>
                                             </div>
 
@@ -49,7 +49,7 @@
                                                             <i class="fas fa-user-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="apellido" placeholder="Igrese Apellido">
+                                                    <input type="text" class="form-control" id="" name="apellido" placeholder="Ingrese Apellido">
                                                 </div>
                                             </div>
 
@@ -62,7 +62,7 @@
                                                             <i class="far fa-address-card"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="dni" placeholder="Igrese DNI">
+                                                    <input type="text" class="form-control" id="" name="dni" placeholder="Ingrese DNI">
                                                 </div>
                                             </div>
 
@@ -132,7 +132,7 @@
                                                             <i class="fas fa-briefcase"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="ocupacion" placeholder="Igrese Ocupación">
+                                                    <input type="text" class="form-control" id="" name="ocupacion" placeholder="Ingrese Ocupación">
                                                 </div>
                                             </div>
 
@@ -186,7 +186,7 @@
                                                             <i class="fas fa-map-marker-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="direccion" placeholder="Igrese Dirección">
+                                                    <input type="text" class="form-control" id="" name="direccion" placeholder="Ingrese Dirección">
                                                 </div>
                                             </div>
 
@@ -199,7 +199,7 @@
                                                             <i class="fas fa-users"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="entornofamiliar" placeholder="Igrese el entorno en el que vive">
+                                                    <input type="text" class="form-control" id="" name="entornofamiliar" placeholder="Ingrese el entorno en el que vive">
                                                 </div>
                                             </div>
 
@@ -212,7 +212,7 @@
                                                             <i class="fas fa-phone-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="telefono" placeholder="Igrese Número de Teléfono">
+                                                    <input type="text" class="form-control" id="" name="telefono" placeholder="Ingrese Número de Teléfono">
                                                 </div>
                                             </div>
 
@@ -272,7 +272,7 @@
                                                             <i class="far fa-id-card"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="numerocertificadod" placeholder="Igrese Numero de CUD">
+                                                    <input type="text" class="form-control" id="" name="numerocertificadod" placeholder="Ingrese Numero de CUD">
                                                 </div>
                                             </div>
 
@@ -311,7 +311,7 @@
                                                             <i class="far fa-building"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="entidadcertificado" placeholder="Igrese la Entidad">
+                                                    <input type="text" class="form-control" id="" name="entidadcertificado" placeholder="Ingrese la Entidad">
                                                 </div>
                                             </div>
 
@@ -416,7 +416,5 @@
         </div>
     </div>
 </div>
-</div>
-
 
 @endsection

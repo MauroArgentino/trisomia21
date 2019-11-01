@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
-@section('content')
-<div class="content-wrapper">
+
+@section('main-content')
 <div class="container">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <!-- card -->
                 <div class="card card-primary">
                     <div class="card-header">
@@ -34,7 +34,7 @@
                                                             <i class="fas fa-user-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="" placeholder="Igrese Nombre">
+                                                    <input type="text" class="form-control" id="" name="" placeholder="Ingrese Nombre">
                                                 </div>
                                             </div>
 
@@ -47,7 +47,7 @@
                                                             <i class="fas fa-user-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="" placeholder="Igrese Apellido">
+                                                    <input type="text" class="form-control" id="" name="" placeholder="Ingrese Apellido">
                                                 </div>
                                             </div>
 
@@ -60,7 +60,7 @@
                                                             <i class="far fa-address-card"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="" placeholder="Igrese DNI">
+                                                    <input type="text" class="form-control" id="" name="" placeholder="Ingrese DNI">
                                                 </div>
                                             </div>
 
@@ -130,7 +130,7 @@
                                                             <i class="fas fa-briefcase"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="" placeholder="Igrese Ocupación">
+                                                    <input type="text" class="form-control" id="" name="" placeholder="Ingrese Ocupación">
                                                 </div>
                                             </div>
 
@@ -185,7 +185,7 @@
                                                             <i class="fas fa-map-marker-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="" placeholder="Igrese Dirección">
+                                                    <input type="text" class="form-control" id="" name="" placeholder="Ingrese Dirección">
                                                 </div>
                                             </div>
 
@@ -198,7 +198,7 @@
                                                             <i class="fas fa-users"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="" placeholder="Igrese con quien vive">
+                                                    <input type="text" class="form-control" id="" name="" placeholder="Ingrese con quien vive">
                                                 </div>
                                             </div>
 
@@ -211,7 +211,7 @@
                                                             <i class="fas fa-phone-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="" name="" placeholder="Igrese Número de Teléfono">
+                                                    <input type="text" class="form-control" id="" name="" placeholder="Ingrese Número de Teléfono">
                                                 </div>
                                             </div>
 

@@ -1,8 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('main-content')
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -31,7 +29,7 @@
             <div class="card-body p-0">
               <ul class="nav nav-pills flex-column">
                 <li class="nav-item active">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('admin.mensaje.index') }}" class="nav-link">
                     <i class="fas fa-inbox"></i> Bandeja de entrada
                     @if ($cantidad_mensajes > 0)
                         <span class="badge bg-primary float-right">{{ $cantidad_mensajes }}</span>
@@ -40,7 +38,7 @@
                 </li>
               
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('admin.mensaje.index') }}" class="nav-link">
                     <i class="far fa-trash-alt"></i> Papelera
                   </a>
                 </li>

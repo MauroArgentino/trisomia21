@@ -25,8 +25,7 @@ class RegisteredsController extends Controller
     {
         $registereds = Registered::all();
 
-
-        return view('admin.censo.listarcensado', compact('registereds'));
+        return view('admin.censo.index', compact('registereds'));
     }
 
     /**
@@ -51,7 +50,7 @@ class RegisteredsController extends Controller
 
         $residences = Residence::all();
 
-        return view('admin.censo.crearcensado', compact('localidades', 'schoolings', 'healthinsurances', 'pensions', 'pathologies', 'treatments', 'residences'));
+        return view('admin.censo.create', compact('localidades', 'schoolings', 'healthinsurances', 'pensions', 'pathologies', 'treatments', 'residences'));
     }
 
     /**
