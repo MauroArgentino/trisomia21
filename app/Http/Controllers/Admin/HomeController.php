@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\Post;
-use App\Model\Admin\User;
-use App\Model\Web\Mensaje;
+use App\Post;
+use App\User;
+use App\Mensaje;
 
 class HomeController extends Controller
 {

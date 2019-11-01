@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\Web\Mensaje;
+use App\Mensaje;
 use Illuminate\Http\Request;
 use App\Http\Requests\MensajeStoreRequest;
 use App\Http\Controllers\Controller;

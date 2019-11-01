@@ -1,98 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trisomia21</title>
-    <link rel="stylesheet" href="{{ asset('web/materialize/css/materialize.css')}}">
-    <link rel="stylesheet" href="{{ asset('web/style.css')}}">
-</head>
-<body>
-    <div class="navbar-fixed">
-         <nav>
-                <div class="nav-wrapper blue">
-                  <a href="#" class="brand-logo">Trisomia21</a>
-                  <ul id="nav-mobile" class="right">
-                    <li class="active"><a href="sass.html">Home</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="{{ route('login')}}">Ingresar</a></li>
-                    <li><a href="{{ route('register') }}">Registrar</a></li>
-                  </ul>
-                </div>
-        </nav>
-    </div>
-    <div class="parallax-container">
-        <div class="parallax"><img src="https://picsum.photos/id/866/3000/1800"></div>
-            <h1 class="center-align white-text">Trisomia21 Villa Ángela</h1>
-            <h5 class="center-align white-text">España</h5>
-          </div>
-    <div class="container">
 
-            <div class="row">
-                <div class="col s8 ">
-                @foreach ($publicaciones as $publicacion)
-                <div class="col s6 ">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="{{ $publicacion->ruta_imagen }}" class="responsive-img">
-                      <span class="card-title">{{ $publicacion->titulo }}</span>
-                    </div>
-                    <div class="card-content">
-                      
-                      {{-- <img src="" >
-                      <span class="small-text">{{ $publicacion->extracto}}</span> --}}
-                        {!! $publicacion->contenido !!}
-                    </div>
-                    <div class="card-action">
-                      <a href="./show.html" class="blue-text right">ver más</a>
-                      <br>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-                </div>
+@extends('web.layouts.home')
 
-                <div class="col s4 ">
-                  <ul class="collection with-header">
-                    <li class="collection-header"><h4>Redes</h4></li>
-                    <li class="collection-item">
-                      <div>
-                        <a href="htpps://es-la.facebook.com" class="blue-text">
-                          Facebook<i class="fab fa-facebook fa-lg secondary-content blue-text"></i>
-                        </a>
-                      </div>
-                    </li>
+@section('content')
 
-                    <li class="collection-item">
-                      <div>
-                        <a href="htpps://twitter.com" class="blue-text">
-                         twitter<i class="fab fa-twitter fa-lg secondary-content blue-text"></i>
-                       </a>
-                     </div>
-                   </li>
-                   <li class="collection-item">
-                    <div>
-                      <a href="htpps://instagram.com" class="blue-text">
-                        Instagram<i class="fab fa-instagram fa-lg secondary-content pink-text">
-                        </i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-                </div>
-            </div>
+<!-- banner slide-->
+<section class="main-content-w3layouts-agileits">
+	<div class="banner">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active">
+					<div class="carousel-caption">
+						<h3>Create the lifestyle
+							<span>you desire</span>
+						</h3>
+						<div class="read">
+							<a href="blog" class="btn btn-primary read-m">leer más</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item2">
+					<div class="carousel-caption">
+						<h3>Engaging Purposeful
+							<span>and Creative</span>
+						</h3>
+						<div class="read">
+							<a href="blog" class="btn btn-primary read-m">leer más</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item3">
+					<div class="carousel-caption">
+						<h3>Create the lifestyle
+							<span>you desire</span>
+						</h3>
+						<div class="read">
+							<a href="blog" class="btn btn-primary read-m">leer más</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Anterior</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Siguiente</span>
+			</a>
+		</div>
+	</div>
+</section>
+<!-- banner slide-->
 
-      {{ $publicaciones->links() }}
+<!--/main-->
+<section class="main-content-w3layouts-agileits">
+	<div class="container">
+		<h3 class="tittle">Noticias Recientes</h3>
+		<div class="row inner-sec">
+			<!--left-->
+			<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+				<div class="row mb-4">
+					@foreach ($publicaciones as $publicacion)
+					<div class="col-md-6 card">
+						<a href="single">
+							<img src="{{ $publicacion->ruta_imagen }}" class="card-img-top img-fluid" alt="">
+						</a>
+						<div class="card-body">
+							<ul class="blog-icons my-4">
+								<li>
+									<a href="#">
+										<i class="far fa-calendar-alt"></i> {{ 
+											\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $publicacion->updated_at)->format('M, d Y') }}</a>
+								</li>	
+								<li class="mx-2">
+									<a href="#">
+										<i class="far fa-user"></i> Editor </a>
+								</li>								
+							</ul>
+							<h5 class="card-title ">
+								<a href="single">{{ $publicacion->titulo}}</a>
+							</h5>
+							<p class="card-text mb-3">{{ $publicacion->contenido }}</p>
+							<a href="single" class="btn btn-primary read-m">Leer más</a>
+						</div>
+					</div>
+					@endforeach
+																	
+				</div>
 
-    </div>
+				{{ $publicaciones->links() }}
+				
+			</div>
+			<!--//left-->
+			<!--right-->
+			@include('web.partials.aside')
+			<!--//right-->
+			</div>
+		</div>
+</section>
+<!--//main-->
 
-    <script src="{{asset('web/fontawesome/fontawesome.js')}}"></script>
-    <script src="{{asset('web/materialize/js/materialize.js')}}"></script>
-    <script>  document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.parallax');
-            var instances = M.Parallax.init(elems);
-          });
-        </script>
-</body>
-</html>
+@endsection
+

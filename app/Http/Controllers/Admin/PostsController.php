@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\Admin\Post;
-use App\Model\Web\Mensaje;
+use App\Post;
+use App\Mensaje;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

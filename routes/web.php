@@ -64,9 +64,7 @@ Route::group(['namespace' => 'Web'], function () {
 
 Route::get('admin-logout','Auth\LoginController@logout')->name('admin.logout');
 
-Route::get('/', function () {
-    return view('web.index');
-});
+Route::get('/', 'Web\HomeController@index');
 
 
 Route::get('crearcensado', function () {
@@ -105,4 +103,35 @@ Auth::routes();
 
 Route::resource('pensiones', 'Admin\PensionsController');
 Route::resource('obrassociales', 'Admin\HealthinsurancesController');
+
 Route::post('buscar', 'Admin\PensionsController@buscar')->name('buscar');
+
+
+
+// Rutas para la web
+
+// Route::get('index', function () {
+//     return view('web.index');
+// });
+Route::get('single', function () {
+    return view('web.Blogs.single');
+});
+Route::get('blogs', function () {
+    return view('web.Blogs.blogs');
+});
+Route::get('forms', function () {
+    return view('web.Forms.forms');
+});
+Route::get('history', function () {
+    return view('web.Info.history');
+});
+Route::get('members', function () {
+    return view('web.Info.members');
+});
+Route::get('syndrome', function () {
+    return view('web.syndrome.syndrome');
+});
+Route::get('contact', function () {
+    return view('web.Contact.contact');
+});
+
