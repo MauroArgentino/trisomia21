@@ -1,10 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('main-content')
-
-<div class="content-wrapper">
-<!-- general form elements -->
-
 <section class="content-header">
   <div class="container-fluid">
     <div class="row">
@@ -32,7 +28,7 @@
             
           <div class="form-group">
             <label for="contenido">Contenido</label>
-            <textarea type="textarea" class="form-control textarea" id="textareaContenido" placeholder="Ingrese la descripción del Evento" name="contenido" rows="10" ></textarea>
+            <textarea type="textarea" class="form-control textarea" id="textareaContenido" name="contenido" rows="10" ></textarea>
           </div>
             
           <div class="row">					  
@@ -55,7 +51,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                 </div>
-                <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" im-insert="true" name="fechaFin">
+                <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="fechaFin" id="datemask">
               </div>
             </div>
             
@@ -93,7 +89,7 @@
 
           <div class="form-group">
             <label for="exampleInputFile">Imagen</label>
-            <input type="file" class="file" id="imagen" name="imagenUrl">                 
+            <input type="file" class="file" id="imagen" name="ruta_imagen">                 
           </div>
         
           <hr>

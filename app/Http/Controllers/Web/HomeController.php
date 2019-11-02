@@ -31,4 +31,12 @@ class HomeController extends Controller
 
     }
 
+     public function show($slug){
+
+        $publicacion = Post::where('slug', $slug)->first();
+
+        return view('web.post.single', compact('publicacion'));
+
+    }
+
 }

@@ -15,7 +15,7 @@ class AgendasController extends Controller
      */
     public function index()
     {
-		return view('admin.evento.index');
+		return view('admin.agenda.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class AgendasController extends Controller
      */
     public function create()
     {
-       
+        return view('admin.agenda.create');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-use App\Model\Admin\Post;
+use App\Post;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 

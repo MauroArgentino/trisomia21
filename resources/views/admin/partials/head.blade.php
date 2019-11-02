@@ -20,6 +20,8 @@
 <link rel="stylesheet" href="{{ asset('dashboard/dist/css/adminlte.min.css') }}">
 <!-- overlayScrollbars -->
 <link rel="stylesheet" href="{{ asset('dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+ <!-- DataTables -->
+<link rel="stylesheet" href="{{ asset('dashboard/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
 <!-- Daterange picker -->
 <link rel="stylesheet" href="{{ asset('dashboard/plugins/daterangepicker/daterangepicker.css') }}">
 <!-- summernote -->
@@ -37,5 +39,3 @@
 <link rel="stylesheet" href="{{asset('dashboard/plugins/bootstrap-fileinput/css/fileinput.css') }}">
 <!-- Estilo Personalizado -->
 <link rel="stylesheet" href="{{asset('dashboard/dist/css/custom.css') }}">
-<!-- Select2 css -->
-<link rel="stylesheet" href="{{asset('dashboard/plugins/select2/css/select2.css')}}">

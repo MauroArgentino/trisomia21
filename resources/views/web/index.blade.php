@@ -75,8 +75,7 @@
 							<ul class="blog-icons my-4">
 								<li>
 									<a href="#">
-										<i class="far fa-calendar-alt"></i> {{ 
-											\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $publicacion->updated_at)->format('M, d Y') }}</a>
+										<i class="far fa-calendar-alt"></i> {{ $publicacion->updated_at->toFormattedDateString() }}</a>
 								</li>	
 								<li class="mx-2">
 									<a href="#">
@@ -87,7 +86,7 @@
 								<a href="single">{{ $publicacion->titulo}}</a>
 							</h5>
 							<p class="card-text mb-3">{{ $publicacion->contenido }}</p>
-							<a href="single" class="btn btn-primary read-m">Leer más</a>
+							<a href="{{ route('web.post.show', $publicacion->slug ) }}" class="btn btn-primary read-m">Leer más</a>
 						</div>
 					</div>
 					@endforeach

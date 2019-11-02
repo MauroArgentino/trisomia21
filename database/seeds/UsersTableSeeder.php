@@ -1,6 +1,6 @@
 <?php
 
-use App\Model\Admin\User;
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 

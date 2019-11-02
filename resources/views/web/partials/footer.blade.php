@@ -14,7 +14,7 @@
 				<div class="col-md-3 mb-md-0 mb-3">
 
 					<!-- Links -->
-					<h5 class="text-uppercase">Links</h5>
+					<h5 class="text-uppercase">Enlaces</h5>
 
 					<ul class="list-unstyled">
 						<li>
@@ -43,7 +43,7 @@
 				<div class="col-md-3 mb-md-0 mb-3">
 
 					<!-- Links -->
-					<h5 class="text-uppercase">Infirmación</h5>
+					<h5 class="text-uppercase">Información</h5>
 
 						<address>
 							<p class="aviso">Congress Yerevan, 1 Italy St, Yerevan, Armenia,No 008921</p>

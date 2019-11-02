@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::get('admin/home/evento', 'AgendasController@index')->name('admin.evento.index')->middleware();
 
-		Route::get('admin/home/evento/nuevo', 'AgendasController@create')->name('admin.evento.create')->middleware();
+		Route::get('admin/home/evento/nuevo', 'AgendasController@create')->name('admin.evento.create');
 
 		Route::post('admin/home/evento/nuevo', 'AgendasController@store')->name('admin.evento.store')->middleware();
 
@@ -87,11 +87,13 @@ Route::group(['namespace' => 'Web'], function () {
 	*/
 	Route::get('/home', 'HomeController@index')->name('web.home');
 
+	Route::get('/home/post/{slug}', 'HomeController@show')->name('web.post.show');
+
 });
 
 Route::get('admin-logout','Auth\LoginController@logout')->name('admin.logout');
 
-Route::get('/', 'Web\HomeController@index');
+// Route::get('/', 'Web\HomeController@index');
 
 
 
