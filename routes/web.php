@@ -66,11 +66,12 @@ Route::get('index', function () {
     return view('web.index');
 });
 Route::get('single', function () {
-    return view('web.Blogs.single');
+    return view('web.Posts.single');
 });
-Route::get('blogs', function () {
-    return view('web.Blogs.blogs');
+Route::get('posts', function () {
+    return view('web.Posts.posts');
 });
+
 Route::get('forms', function () {
     return view('web.Forms.forms');
 });
@@ -86,3 +87,7 @@ Route::get('syndrome', function () {
 Route::get('contact', function () {
     return view('web.Contact.contact');
 });
+Route::get('activities', function () {
+    return view('web.Activities.activities');
+});
+// Route::get('post', 'Web/PostsController@post')->name('post');

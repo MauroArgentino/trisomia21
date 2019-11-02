@@ -24,7 +24,7 @@
 							<a class="in" href="history">Quienes Somos</a>
 						</li>
 						<li>
-							<a class="in" href="blogs">Actividades y Noticias</a>
+							<a class="in" href="posts">Actividades y Noticias</a>
 						</li>
 						<li>
 							<a class="in" href="sybdrome">Sobre el Sindrome</a>

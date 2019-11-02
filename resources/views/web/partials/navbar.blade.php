@@ -44,9 +44,9 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="#"></a>
-					<a class="dropdown-item" href="#">Actividades</a>
+					<a class="dropdown-item" href="activities">Actividades</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="blogs">Noticias</a>
+					<a class="dropdown-item" href="posts">Noticias</a>
 					
 
 				</div>
