@@ -188,7 +188,7 @@ a.dropdown-item:hover{
 
 .navbar {	
 	padding: 0 lem;
-	font-size: 16px;
+	font-size: 19px;
 	
 }
 
@@ -236,31 +236,31 @@ li.nav-item {
 }
 /*--/search--*/
 form.header-search {
-    width: 15%;
+    width: 19%;
 }
 .header-search form {
 	background: #fff;
-	padding: 0.3em;
+	padding: 0.3px;
 	border-radius: 50px;
 }
 
 .header-search input[type="search"] {
     outline: none;
     border: none;
-	padding: 10px 30px;
+	padding: 10px;
     color: #007bff;
     font-size: 14px;
     background: #fff(110, 110, 110, 0.2);
     float: left;
     letter-spacing: 1px;
-	width: 50%;
+	width: 75%;
 	border-radius: 0;
 }
 
 .header-search button.btn1 {
 	color: #f6fa00;
 	border: none;
-	padding: 9px 9px 10px 9px;
+	padding: 9px 9px 9px 9px;
 	text-align: center;
 	text-decoration: none;
 	background: #007bff;
@@ -271,7 +271,7 @@ form.header-search {
 	transition: 0.5s all;
 	float: right;
 	cursor: pointer;
-	width: 12%;
+	/*width: 50%;*/
 	border-radius: 0;
 }
 .breadcrumb-item + .breadcrumb-item::before {
@@ -1116,7 +1116,7 @@ a.in:hover{
 		bottom: 10em;
 	}
 	form.header-search {
-		width: 34%;
+		width: 50%;
 	}
 }
 @media(max-width:1080px) {

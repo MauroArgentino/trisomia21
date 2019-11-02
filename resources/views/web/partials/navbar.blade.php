@@ -2,7 +2,7 @@
 <!-- Imagen y texto -->
 <nav class="navbar-nav navbar-dark bg-primary mr-auto">
 	<ul class="navbar-nav mr-auto">
-		<a class="navbar-brand" href="index">
+		<a class="navbar-brand" href="{{ route('web.home') }}">
 			<img src="{{ asset('web/img/ico.svg') }}" width="200" height="200" class="navbar-center">
 			Trisomia 21 V.A.
 				
@@ -74,11 +74,14 @@
 		</ul>
 		<form action="#" method="post" class="form-inline my-2 ml-md-0 header-search navbar-nav mr-auto">
 			<div class="form-group">
-			<input class="form-control mr-sm-2" style="border-radius: 5rem;" type="search" placeholder="Buscar" name="Search" required>
+			<input class="form-control mr-sm-2" style="border-radius: 5rem;" type="search" placeholder="Buscar" name="sugerirPublicacion" required="" id="sugerirPublicacion">
 			<button class="btn btn1 ml-3 ml-sm-0" type="submit">
 				<i class="fas fa-search"></i>
 			</button>
+
 			</div>
+<div id="listadoPublicaciones"></div>
+			{{ csrf_field() }}
 		</form>
 	</div>
 </nav>

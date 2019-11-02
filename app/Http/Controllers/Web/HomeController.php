@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class HomeController extends Controller
 {
@@ -36,6 +37,23 @@ class HomeController extends Controller
         $publicacion = Post::where('slug', $slug)->first();
 
         return view('web.post.single', compact('publicacion'));
+
+    }
+
+    public function fetch(Request $request){
+
+        if($request->get('query'))
+        {
+            $query = $request->get('query');
+            $data = DB::table('posts')->where('titulo', 'LIKE', '%'.$query.'%')->get();
+            $output = '<ul class="dropdown-menu" style="display:block; position:absolute; background: white;">';
+            foreach ($data as $row) {
+                $output .= '<li><a href="'.url('home/post/').'/'.$row->slug.'">'.$row->titulo.'</a></li>';
+            }
+            $output .= '</ul>';
+
+            echo $output;
+        }
 
     }
 

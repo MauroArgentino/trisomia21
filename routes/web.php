@@ -87,6 +87,8 @@ Route::group(['namespace' => 'Web'], function () {
 	*/
 	Route::get('/home', 'HomeController@index')->name('web.home');
 
+	Route::post('/home', 'HomeController@fetch')->name('web.home.fetch');
+
 	Route::get('/home/post/{slug}', 'HomeController@show')->name('web.post.show');
 
 });
@@ -148,4 +150,3 @@ Route::get('syndrome', function () {
 Route::get('contact', function () {
     return view('web.Contact.contact');
 });
-
