@@ -20,6 +20,6 @@ class Location extends Model
 
     public function volunteers()
     {
-        return $this->hasMany('App\Registered');
+        return $this->hasMany('App\Volunteer');
     }
 }

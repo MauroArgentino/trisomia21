@@ -94,11 +94,14 @@
                                                         </span>
                                                     </div>
                                                     <select class="custom-select" id="" name="localidad_id">
-                                                            @foreach ($localidades as $localidad)
-                                                                <option value="{{ $localidad->id }}">{{ $voluntario->localidad->localidad }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        {{-- <input type="text" class="form-control" value="{{ $voluntario->localidad->localidad}}"> --}}
+                                                        @foreach ($localidades as $localidad)
+                                                            @if ($localidad->id == $voluntario->localidad_id)
+                                                                <option value="{{ $localidad->id }}" selected>{{ $localidad->localidad }}</option>
+                                                            @else
+                                                            <option value="{{ $localidad->id }}">{{ $localidad->localidad }}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
 
