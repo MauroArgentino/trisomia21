@@ -12,8 +12,8 @@
                     </div>
 
                     <!-- inicio formulario -->
-                    <form action="{{ route('censado.store') }}" method="POST">
-                        @csrf
+                    <form action="{{ route('admin.censo.store') }}" method="POST">
+                       @csrf
                         <div class="card-body">
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">

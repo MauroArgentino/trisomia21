@@ -13,7 +13,7 @@
 
 
                     <!-- inicio formulario -->
-                    <form action="{{ route('tutor.store') }}" method="POST" onsubmit="return validacion()">
+                    <form action="{{ route('admin.tutor.store') }}" method="POST" onsubmit="return validacion()">
                         @csrf
                         <div class="card-body">
                                 <nav>

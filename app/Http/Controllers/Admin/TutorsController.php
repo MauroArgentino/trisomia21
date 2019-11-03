@@ -3,7 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Tutor;
+use App\Pension;
+use App\Location;
+use App\Residence;
+use App\Schooling;
+use App\Treatment;
+use App\Pathologie;
 use App\Registered;
+use App\Healthinsurance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,6 +33,18 @@ class TutorsController extends Controller
      */
     public function create()
     {
+        $localidades = Location::all();
+
+        $schoolings = Schooling::all();
+
+        $healthinsurances = Healthinsurance::all();
+
+        $pensions = Pension::all();
+
+        $pathologies = Pathologie::all();
+
+        $residences = Residence::all();
+
         return view('admin.tutor.create');
     }
 
@@ -61,6 +80,17 @@ class TutorsController extends Controller
         return back();
     }
 
+    public function asignarTutorACensado(Request $request)
+    {
+        $censado = Registered::find($request->registered_id);
+
+        $censado->tutors()->attach($request->tutor_id);
+
+        toastr()->success('Se ha asignado correctamente el tutor', 'Éxito');
+
+        return back();
+    }
+
     /**
      * Display the specified resource.
      *
@@ -69,9 +99,11 @@ class TutorsController extends Controller
      */
     public function show($tutor, $censado)
     {
+        $registered = Registered::find($censado);
+        
         $tutor = Tutor::find($tutor);
 
-        return view('admin.censo.vertutor', \compact('tutor', 'censado'));
+        return view('admin.censo.show', compact('tutor', 'registered'));
     }
 
     /**
@@ -129,6 +161,8 @@ class TutorsController extends Controller
                 $tutor->registereds()->detach($censado->id);
             }
         }
+
+        toastr()->warning('Acaba de eliminar el tutor del censado', 'Alerta');
 
         return back();
     }

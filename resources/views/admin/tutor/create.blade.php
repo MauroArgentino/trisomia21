@@ -12,7 +12,8 @@
                     </div>
 
                     <!-- inicio formulario -->
-                    <form action="">
+                    <form action="{{ route('admin.tutor.store') }}" method="POST">
+                        @csrf
                         <div class="card-body">
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">

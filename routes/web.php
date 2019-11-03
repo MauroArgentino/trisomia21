@@ -35,7 +35,18 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::get('admin/home/censado/nuevo', 'RegisteredsController@create')->name('admin.censo.create');
 
+		Route::post('admin/home/censado/guardando', 'RegisteredsController@store')->name('admin.censo.store');
+
+		Route::get('admin/home/censado/{id}', 'RegisteredsController@show')->name('admin.censo.show');
+
 		Route::get('admin/home/censado/listado', 'RegisteredsController@index')->name('admin.censo.index');
+
+		// Rutas de Tutores
+
+		Route::post('admin/home/tutor/guardando', 'TutorsController@store')->name('admin.tutor.store');
+
+		Route::get('admin/home/tutor/{tutor}/{censado}', 'TutorsController@show')->name('admin.tutor.show');
+
 
 		//Ruta para eliminar el tutor de un censado, pero no borra el tutor.
 		Route::get('censado/{tutor}/{censado}', 'TutorsController@eliminarTutor')->name('tutor.eliminar');
@@ -107,22 +118,16 @@ Route::get('admin-logout','Auth\LoginController@logout')->name('admin.logout');
 // Route::get('/', 'Web\HomeController@index');
 
 
+//Ruta para ver tutor y volver al show del censado
 
+//Ruta para eliminar el tutor de un censado, pero no borra el tutor.
+Route::get('censado/{tutor}/{censado}', 'Admin\TutorsController@eliminarTutor')->name('tutor.eliminar');
 
+//Ruta asignar tutor a censado
+Route::post('censado/tutor', 'Admin\TutorsController@asignarTutorACensado')->name('censado.tutor.store');
 
-// Route::get('listarcensado', function () {
-//     return view('admin.censo.listarcensado');
-// });
-
-// Route::get('creartutor', function () {
-//     return view('admin.censo.creartutor');
-// });
-
-// Route::get('listartutor', function () {
-//     return view('admin.censo.listartutor');
-// });
-
-
+//Ruta de recursos para Voluntarios
+Route::resource('voluntario', 'Admin\VolunteersController');
 
 Auth::routes();
 
@@ -132,33 +137,3 @@ Route::resource('obrassociales', 'Admin\HealthinsurancesController');
 
 Route::post('buscar', 'Admin\PensionsController@buscar')->name('buscar');
 
-
-
-// Rutas para la web
-
-// Route::get('index', function () {
-//     return view('web.index');
-// });
-
-// Rutas para la web
-
-Route::get('forms', function () {
-    return view('web.Forms.forms');
-});
-Route::get('history', function () {
-    return view('web.Info.history');
-});
-Route::get('members', function () {
-    return view('web.Info.members');
-});
-Route::get('syndrome', function () {
-    return view('web.syndrome.syndrome');
-});
-Route::get('contact', function () {
-    return view('web.Contact.contact');
-});
-
-Route::get('activities', function () {
-    return view('web.Activities.activities');
-});
-// Route::get('post', 'Web/PostsController@post')->name('post');

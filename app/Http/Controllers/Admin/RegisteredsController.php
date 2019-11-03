@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Tutor;
 use App\Pension;
 use App\Location;
+use App\Residence;
 use App\Schooling;
 use App\Treatment;
 use App\Pathologie;
 use App\Registered;
 use App\Healthinsurance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Residence;
 
 class RegisteredsController extends Controller
 {
@@ -108,7 +109,10 @@ class RegisteredsController extends Controller
         //tratamiento
         $censado->treatments()->attach($request->tratamiento);
 
-        return redirect()->route('censado.show', $censado->id);
+        toastr()->success('Se ha registrado correctamente el censado');
+
+
+        return redirect()->route('admin.censo.show', $censado->id);
     }
 
     /**
@@ -123,11 +127,23 @@ class RegisteredsController extends Controller
 
         $tutors = Registered::with('tutors')->find($id); //manda solo los tutores de ese censado
 
+        $totaltutors = Tutor::all();
+
+        $filtro = [];
+
+        if ($tutors != null){
+            foreach ($tutors->tutors as $tutor) {
+                array_push($filtro, $tutor->id);
+            }
+        }
+        if ($totaltutors != null) {
+            $tutores = $totaltutors->diff(Tutor::whereIn('id', $filtro)->get());
+        }
         $localidades = Location::all();
 
         $healthinsurances = Healthinsurance::all();
 
-        return view('admin.censo.vercensado', compact('registered', 'tutors', 'localidades', 'healthinsurances'));
+        return view('admin.censo.show', compact('registered', 'tutors', 'localidades', 'healthinsurances', 'totaltutors', 'tutores'));
     }
 
     /**
@@ -196,6 +212,8 @@ class RegisteredsController extends Controller
         }
 
         $censado->delete();
+
+        toastr()->success('Se ha eliminado el censado correctamente');
 
         return back();
     }
