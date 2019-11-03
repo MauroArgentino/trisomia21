@@ -25,6 +25,7 @@
 		<link href="{{ asset('web/css/fontawesome-all.css') }}" rel="stylesheet">
 		<link href="{{ asset('web/plugins/jssocials/jssocials.css') }}" rel="stylesheet">
 		<link href="{{ asset('web/plugins/jssocials/jssocials-theme-classic.css') }}" rel="stylesheet">
+		<link href="{{ asset('web/plugins/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
 
 		{{--  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> --}}
 		{{-- <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
@@ -83,6 +84,7 @@
 		<script src="{{ asset('web/js/bootstrap.js') }}"></script>
 		<script src="{{ asset('web/js/custom.js') }}"></script>
 		<script src="{{ asset('web/plugins/jssocials/jssocials.js') }}"></script>
+		<script src="{{ asset('web/plugins/fancybox/jquery.fancybox.js') }}"></script>
 	</body>
 
 </html>

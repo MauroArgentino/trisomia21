@@ -37,5 +37,9 @@ $(document).ready(function () {
                   $(this).attr("src", 'https://i.pravatar.cc/180');
             }
       });
+
+      $('[data-fancybox]').fancybox({
+        protect: true
+      });
      
 });

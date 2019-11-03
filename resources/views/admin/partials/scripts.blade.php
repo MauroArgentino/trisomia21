@@ -22,7 +22,7 @@
 <script src="{{ asset('dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dashboard/dist/js/adminlte.js') }}"></script>
-{{-- <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+{{-- AdminLTE dashboard demo (This is only for demo purposes)
 <script src="{{ asset('dashboard/dist/js/pages/dashboard.js') }}"></script> --}}
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dashboard/dist/js/demo.js') }}"></script>
@@ -35,7 +35,7 @@
 <script src="{{ asset('dashboard/plugins/bootstrap-fileinput/themes/fas/theme.min.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/plugins/piexif.js') }}"></script>
 <!-- Toastr -->
-<script src="{{ asset('dashboard/plugins/Toastr/toastr.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/toastr/toastr.min.js') }}"></script>
 
 <!-- Select2 js -->
 <script src="{{ asset('dashboard/plugins/select2/js/select2.js') }}"></script>
@@ -43,4 +43,15 @@
 <script src="{{ asset('dashboard/plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 <!-- Scripts personalizados -->
-<script src="{{ asset('dashboard/dist/js/custom.js') }}" type="text/javascript"></script>
+<script src="{{ asset('dashboard/dist/js/custom.js') }}"></script>
+@if (Session::has('notificacion'))
+    <script>
+        $(document).ready(function() {
+
+        toastr.{{ Session::get('notificacion.tipo') }}
+        ('{{ Session::get('notificacion.mensaje') }}', '{{ Session::get('notificacion.titulo') }}' );
+
+        });
+    </script>
+
+@endif

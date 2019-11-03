@@ -56,6 +56,11 @@ class Post extends Model
         }
     }
 
+     public static function getImagen() {
+        
+       
+    }
+
     public static function getExcerpt($str, $startPos = 0, $maxLength = 50) {
         if(strlen($str) > $maxLength) {
             $excerpt   = substr($str, $startPos, $maxLength - 6);

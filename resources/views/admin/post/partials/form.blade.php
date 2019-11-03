@@ -8,13 +8,13 @@
     {{-- <div class="card-body"> --}}
       <div class="form-group">
         <label for="labelTitulo">Título</label>
-        <input type="text" class="form-control" id="inputTitulo" name="titulo" placeholder="Ingrese el título de la publicación">
+        <input type="text" class="form-control" id="inputTituloPublicacion" name="titulo" placeholder="Ingrese el título de la publicación">
       </div>
       
       <div class="form-group">
           <label for="labelContenido">Contenido</label>
           <div class="mb-3">
-            <textarea class="textarea" placeholder="Ingrese el contenido de la publicación aquí" name="contenido"></textarea>
+            <textarea class="textarea" id="textareaContenido" placeholder="" name="contenido"></textarea>
           </div>
         </div>
 

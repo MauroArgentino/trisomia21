@@ -10,7 +10,13 @@
 			<div class="col-md-8 card">
 				<h3 class="tittle">Blog Post</h3>
 				<a href="#">
-					<img src="{{ $publicacion->ruta_imagen }}" class="card-img-top img-fluid" alt="">
+					@if ( Str::contains($publicacion->ruta_imagen, "lorem") )
+					<a data-fancybox="images" data-caption="{{ $publicacion->extracto }}" href="{{$publicacion->ruta_imagen}}">
+								<img src="{{$publicacion->ruta_imagen}}" class="card-img-top img-fluid" alt="">
+							@else
+							<a data-fancybox="images" data-caption="{{ $publicacion->extracto }}" href="{{ asset('storage/images/posts/'.$publicacion->ruta_imagen) }}">
+								<img src="{{ asset('storage/images/posts/'.$publicacion->ruta_imagen) }}" class="card-img-top img-fluid" alt="">
+							@endif
 				</a>
 				<div class="card-body">
 					<ul class="blog-icons my-4">
@@ -20,7 +26,11 @@
 						</li>	
 						<li class="mx-2">
 							<a href="#">
-								<i class="far fa-user"></i> Editor {{ $publicacion->user_modified->name }} </a>
+								@if ( !($publicacion->user_modified))
+									<i class="far fa-user"></i> Editor {{ $publicacion->user_create->name }} </a>
+								@else
+									<i class="far fa-user"></i> Editor {{ $publicacion->user_modified->name }} </a>
+								@endif
 						</li>								
 					</ul>
 					<h5 class="card-title ">

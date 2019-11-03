@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostStoreRequest;
 use Illuminate\Support\Facades\Storage;
+use Toastr;
 
 class PostsController extends Controller
 {
@@ -55,7 +56,13 @@ class PostsController extends Controller
 
         $publicacion->save();
 
-        return redirect('admin/home')->with('status', 'La publicación se ha creado satisfactoriamente.');
+        $notificacion = [
+            'titulo' => 'Felicitaciones',
+            'mensaje' => 'La publicación se ha creado satisfactoriamente.',
+            'tipo' => 'success',
+        ];
+
+        return redirect('admin/home/post/listado')->with('notificacion', $notificacion);
     }
 
     /**
@@ -67,7 +74,28 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $etiquetas = explode(',', $request->tags);
+
+        $publicacion = Post::find($id);
+
+        $publicacion->titulo = $request->titulo;
+        $publicacion->contenido = $request->contenido;
+        $publicacion->user_modificated_id = Auth::user()->id;
+        $publicacion->slug = Str::slug($request->titulo);
+        $publicacion->extracto = $request->extracto;
+        if ($request->estado == "on"){
+            $publicacion->estado = "PUBLISHED";
+        }else{
+            $publicacion->estado = "DRAFT";
+        }
+        $publicacion->ruta_imagen = Post::setImagen($request->ruta_imagen);
+        $publicacion->save();
+        
+        $publicacion->tag($etiquetas);
+
+        $publicacion->save();
+
+        return redirect('admin/home/post/listado')->with('status', 'La publicación se ha editado satisfactoriamente.');
     }
 
     public function destroy($id) {

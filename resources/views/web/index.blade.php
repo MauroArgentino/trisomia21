@@ -68,8 +68,13 @@
 				<div class="row mb-4">
 					@foreach ($publicaciones as $publicacion)
 					<div class="col-md-6 card">
-						<a href="single">
-							<img src="{{ $publicacion->ruta_imagen }}" class="card-img-top img-fluid" alt="">
+						<a href="{{ route('web.publicacion.show', $publicacion->slug ) }}">
+							@if ( Str::contains($publicacion->ruta_imagen, "lorem") )
+								<img src="{{$publicacion->ruta_imagen}}" class="card-img-top img-fluid" alt="">
+							@else
+								<img src="{{ asset('storage/images/posts/'.$publicacion->ruta_imagen) }}" class="card-img-top img-fluid" alt="">
+							@endif
+							
 						</a>
 						<div class="card-body">
 							<ul class="blog-icons my-4">
@@ -86,7 +91,7 @@
 							<h5 class="card-title ">
 								<a href="{{ route('web.publicacion.show', $publicacion->slug) }}">{{ $publicacion->titulo}}</a>
 							</h5>
-							<p class="card-text mb-3">{{ $publicacion->contenido }}</p>
+							<p class="card-text mb-3">{!! $publicacion->contenido !!}</p>
 							<a href="{{ route('web.publicacion.show', $publicacion->slug ) }}" class="btn btn-primary read-m">Leer más</a>
 						</div>
 					</div>

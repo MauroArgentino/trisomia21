@@ -2,6 +2,7 @@
 
 @section('main-content')
 <div class="content">
+      
     <div class="card card-default">
         <div class="card-header">
 

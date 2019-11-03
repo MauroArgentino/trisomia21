@@ -168,6 +168,7 @@ return [
 
         Mews\Captcha\CaptchaServiceProvider::class,
         Conner\Tagging\Providers\TaggingServiceProvider::class,
+        TJGazel\Toastr\ToastrServiceProvider::class
 
         /*
          * Application Service Providers...
@@ -228,7 +229,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Toastr' => TJGazel\Toastr\Facades\Toastr::class
     ],
 
 ];

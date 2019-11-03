@@ -7,13 +7,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 		// Rutas de Publicaciones (Posts)
 
-		Route::get('admin/post/listado', 'PostsController@index')->name('admin.post.index');
+		Route::get('admin/home/post/listado', 'PostsController@index')->name('admin.post.index');
 
-		Route::get('admin/post/nuevo', 'PostsController@create')->name('admin.post.create');
+		Route::get('admin/home/post/nuevo', 'PostsController@create')->name('admin.post.create');
 
-		Route::post('admin/post/nuevo', 'PostsController@store')->name('admin.post.store');
+		Route::post('admin/home/post/nuevo', 'PostsController@store')->name('admin.post.store');
 
-		Route::delete('admin/post/listado/{id}', 'PostsController@destroy')->name('admin.post.destroy');
+		Route::delete('admin/home/post/listado/{id}', 'PostsController@destroy')->name('admin.post.destroy');
 
 		Route::get('admin/home', 'HomeController@index')->name('admin.home');
 
