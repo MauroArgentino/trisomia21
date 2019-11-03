@@ -20,11 +20,11 @@
 				<input type="text" class="form-control orm-text text-muted" id="" placeholder="">
 			</div>
 			<div class="form-group">
-				<label for="exampleFormControlInput1">D.N.I</label>
+				<label for="exampleFormControlInput1">D.N.I.</label>
 				<input type="text" class="form-control orm-text text-muted" id="" placeholder="">
 			</div>
 			<div class="form-group">
-				<label for="exampleFormControlInput1">Fecha de Nacimiento</label>
+				<label for="exampleFormControlInput1">Fecha de nacimiento</label>
 				<input type="text" class="form-control orm-text text-muted" id="" placeholder="">
 			</div>
 								
@@ -54,7 +54,4 @@
 	<!--//main-->
 	</div>
 
-
-
 @endsection
-

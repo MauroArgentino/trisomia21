@@ -3,32 +3,39 @@ $(document).ready(function () {
             shareIn: "popup",
             showCount: true,
             shares: [ "email", 
-                      "twitter",
-                      "facebook",
-                      "whatsapp",
-                      "linkedin",
+                      { share: "twitter", logo: "fab fa-twitter" },
+                      { share: "facebook", logo: "fab fa-facebook", label: "Facebook" },
+                      { share: "whatsapp", logo: "fab fa-whatsapp" },
+                      { share: "linkedin", logo: "fab fa-linkedin-in", label: "Linkedin" },
                       "telegram"]
         });
 
      $("#sugerirPublicacion").keyup(function(){
 
-        var query = $(this).val();
+        var consulta = $(this).val();
 
-        if(query != ''){
+        if(consulta != ''){
             var _token = $('input[name="_token"]').val();
 
             $.ajax({
                 url: "/home",
                 method: "POST",
-                data: {query:query, _token:_token},
+                data: {consulta:consulta, _token:_token},
                 success: function(data){
+                  console.log(data);
                   $('#listadoPublicaciones').fadeIn();
                   $('#listadoPublicaciones').html(data);
-                  console.log(data);
                 }
             })
         }
      });
 
+     $('.card img').each(function() {
+
+        if ($(this).hasClass("persona")) {
+              console.log("Hola");
+                  $(this).attr("src", 'https://i.pravatar.cc/180');
+            }
+      });
      
 });

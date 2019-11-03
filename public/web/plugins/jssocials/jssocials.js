@@ -431,7 +431,7 @@
     $.extend(jsSocials.shares, {
 
         email: {
-            label: "Correo",
+            label: "E-mail",
             logo: "fa fa-at",
             shareUrl: "mailto:{to}?subject={text}&body={url}",
             countUrl: "",
@@ -440,14 +440,14 @@
 
         twitter: {
             label: "Tweet",
-            logo: "fab fa-twitter",
+            logo: "fa fa-twitter",
             shareUrl: "https://twitter.com/share?url={url}&text={text}&via={via}&hashtags={hashtags}",
             countUrl: ""
         },
 
         facebook: {
             label: "Like",
-            logo: "fab fa-facebook-f",
+            logo: "fa fa-facebook",
             shareUrl: "https://facebook.com/sharer/sharer.php?u={url}",
             countUrl: "https://graph.facebook.com/?id={url}",
             getCount: function(data) {
@@ -473,8 +473,8 @@
         },
 
         linkedin: {
-            label: "Compartir",
-            logo: "fab fa-linkedin",
+            label: "Share",
+            logo: "fa fa-linkedin",
             shareUrl: "https://www.linkedin.com/shareArticle?mini=true&url={url}",
             countUrl: "https://www.linkedin.com/countserv/count/share?format=jsonp&url={url}&callback=?",
             getCount: function(data) {
@@ -494,7 +494,7 @@
 
         stumbleupon: {
             label: "Share",
-            logo: "fab fa-stumbleupon",
+            logo: "fa fa-stumbleupon",
             shareUrl: "http://www.stumbleupon.com/submit?url={url}&title={title}",
             countUrl:  "https://cors-anywhere.herokuapp.com/https://www.stumbleupon.com/services/1.01/badge.getinfo?url={url}",
             getCount: function(data) {
@@ -512,7 +512,7 @@
 
         whatsapp: {
             label: "WhatsApp",
-            logo: "fab fa-whatsapp",
+            logo: "fa fa-whatsapp",
             shareUrl: "whatsapp://send?text={url} {text}",
             countUrl: "",
             shareIn: "self"
@@ -542,16 +542,7 @@
 
         messenger: {
             label: "Share",
-            logo: "fab fa-facebook-messenger",
-            shareUrl: "fb-messenger://share?link={url}",
-            countUrl: "",
-            shareIn: "self"
-        },
-		// Se estaba queriendo integrar instagram, pero creo que no se puede.
-        // Por Mauro Javier Montenegro.
-		instagram: {
-            label: "Instagram",
-            logo: "fa fa-instagram",
+            logo: "fa fa-commenting",
             shareUrl: "fb-messenger://share?link={url}",
             countUrl: "",
             shareIn: "self"

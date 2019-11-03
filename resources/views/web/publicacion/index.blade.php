@@ -12,7 +12,7 @@
 				
 				<div class="col-md card">
 					<a href="single">
-						<img src="img/7.jpg" class="card-img-top img-fluid" alt="">
+						<img src="{{ asset('web/img/7.jpg') }}" class="card-img-top img-fluid" alt="">
 					</a>
 					<div class="card-body">
 						<ul class="blog-icons my-4">
@@ -34,7 +34,7 @@
 				</div>
 				<div class="col-md card">
 					<a href="single">
-						<img src="img/6.jpg" class="card-img-top img-fluid" alt="">
+						<img src="{{ asset('web/img/6.jpg') }}" class="card-img-top img-fluid" alt="">
 					</a>
 					<div class="card-body">
 						<ul class="blog-icons my-4">
@@ -56,7 +56,7 @@
 				</div>
 				<div class="col-md card">
 					<a href="single">
-						<img src="img/2.jpg" class="card-img-top img-fluid" alt="">
+						<img src="{{ asset('web/img/2.jpg') }}" class="card-img-top img-fluid" alt="">
 					</a>
 					<div class="card-body">
 						<ul class="blog-icons my-4">

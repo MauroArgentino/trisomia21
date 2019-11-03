@@ -11,8 +11,9 @@
 			<h3 class="tittle">¿Quienes Somos?</h3>
 				<div class="row mb-4">
 					<div class="col-md-6 card">						
-						<div class="card-body">							
-							<h3 class="card-title ">
+						<div class="card-body">
+							<img align="text-center" src="" class="persona">						
+							<h3 class="card-title">
 								PRESIDENTE
 							</h3>
 							<p>
@@ -21,7 +22,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">					
 							<h3 class="card-title ">
 								VICEPRESIDENTE
 							</h3>
@@ -31,7 +33,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								SECRETARIO
 							</h3>
@@ -41,7 +44,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">	
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								PROSECRETARIO
 							</h3>
@@ -51,7 +55,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								TESORERO
 							</h3>
@@ -61,7 +66,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								PROTESORERO
 							</h3>
@@ -71,7 +77,8 @@
 						</div>
                     </div>	
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								VOCAL TITULAR 1º
 							</h3>
@@ -81,7 +88,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								VOCAL TITULAR 2º
 							</h3>
@@ -91,7 +99,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								VOCAL TITULAR 3º
 							</h3>
@@ -101,7 +110,8 @@
 						</div>
                     </div>	
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">	
+							<img align="text-center" src="" class="persona">					
 							<h3 class="card-title ">
 								VOCAL SUPLENTE 1º
 							</h3>
@@ -111,7 +121,8 @@
 						</div>
                     </div>	
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								VOCAL SUPLENTE 2º
 							</h3>
@@ -121,7 +132,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">					
 							<h3 class="card-title ">
 								VOCAL SUPLENTE 3º
 							</h3>
@@ -129,8 +141,9 @@
                                 ESCOBAR, Matias Ismael
                             </p>
 						</div>
-					</div><div class="col-md-6 card">						
-						<div class="card-body">							
+					</div><div class="col-md-6 card">
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">						
 							<h3 class="card-title ">
 								REVISOR DE CUENTAS TITULAR
 							</h3>
@@ -140,7 +153,8 @@
 						</div>
                     </div>
                     <div class="col-md-6 card">						
-						<div class="card-body">							
+						<div class="card-body">
+						<img align="text-center" src="" class="persona">							
 							<h3 class="card-title ">
 								REVISOR DE CUENTAS SUPLENTE
 							</h3>

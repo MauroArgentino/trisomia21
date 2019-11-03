@@ -2,10 +2,9 @@
 <!-- Imagen y texto -->
 <nav class="navbar-nav navbar-dark bg-primary mr-auto">
 	<ul class="navbar-nav mr-auto">
-		<a class="navbar-brand" href="{{ route('web.home') }}">
-			<img src="{{ asset('web/img/ico.svg') }}" width="200" height="200" class="navbar-center">
-			Trisomia 21 V.A.
-				
+		<a class="navbar-brand" href="{{ route('web.home.index') }}">
+			<img src="{{ asset('web/img/ico.svg') }}" width="250" height="250" class="navbar-center">
+			Trisomia 21 V.A.				
 		</a>
 		<!-- <a class="float-right">
 			<img src="./img/vos.png" width="180" height="120" class="navbar-center">
@@ -21,7 +20,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="{{ route('web.home') }}"> Inicio <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="{{ route('web.home.index') }}"> Inicio <span class="sr-only">(current)</span></a>
 			</li>			
 			<li class="nav-item dropdown active">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -30,9 +29,9 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="#"></a>
-					<a class="dropdown-item" href="history">Historia</a>
+					<a class="dropdown-item" href="{{ route('web.informacion.history') }}">Historia</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="members">Nomina de integrantes</a>
+					<a class="dropdown-item" href="{{ route('web.informacion.miembros') }}">Nomina de integrantes</a>
 					
 
 				</div>
@@ -43,16 +42,17 @@
 					Actividades y Noticias
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#"></a>
-					<a class="dropdown-item" href="#">Actividades</a>
+					{{-- <a class="dropdown-item" href="#"></a> --}}
+
+					<a class="dropdown-item" href="{{ route('web.actividades.index') }}">Actividades</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="blogs">Noticias</a>
+					<a class="dropdown-item" href="{{ route('web.publicaciones.index') }}">Noticias</a>
 					
 
 				</div>
 			</li>
 			<li class="nav-item dropdown active">
-				<a class="nav-link " href="syndrome">Sobre el Sindrome</a>
+				<a class="nav-link" href="{{ route('web.sindrome.index') }}">Sobre el Sindrome</a>
 			</li>
 			<li class="nav-item dropdown active">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,16 +60,16 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="#"></a>
-					<a class="dropdown-item" href="forms">Registro</a>
+					<a class="dropdown-item" href="{{ route('web.home.registrarse') }}">Registro</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="forms">Ser Voluntario</a>
+					<a class="dropdown-item" href="{{ route('web.home.voluntario') }}">Ser Voluntario</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="forms">Donar</a>
+					<a class="dropdown-item" href="{{ route('web.home.donar') }}">Donar</a>
 
 				</div>
 			</li>
 			<li class="nav-item dropdown active">
-				<a class="nav-link" href="contact">Contactos</a>
+				<a class="nav-link" href="{{ route('web.home.contacto') }}">Contactos</a>
 			</li>		
 		</ul>
 		<form action="#" method="post" class="form-inline my-2 ml-md-0 header-search navbar-nav mr-auto">

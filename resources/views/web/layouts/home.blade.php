@@ -8,6 +8,7 @@
 		<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
+
 		{{-- <script>
 			addEventListener("load", function () {
 				setTimeout(hideURLbar, 0);
@@ -17,6 +18,7 @@
 				window.scrollTo(0, 1);
 			}
 		</script> --}}
+
 		<link href="{{ asset('web/css/bootstrap.css') }}" rel='stylesheet'>
 		{{-- <link href="{{ asset('web/css/single.css') }}" rel="stylesheet"> --}}
 		<link href="{{ asset('web/css/style.css') }}" rel='stylesheet'>
@@ -34,14 +36,12 @@
 			<section class="">
 				@include('web.partials.navbar')
 			</section>
-		
-			
 		</header>
-		
+
 			<section class="main-content-agileits">
 				@yield('content')	
 			</section>
-				
+
 			@include('web.partials.footer')
 		
 		<!-- js -->
@@ -62,7 +62,6 @@
 			});
 		</script>
 		<!--// end-smoth-scrolling -->
-
 		{{-- <script>
 			$(document).ready(function () {
 				/*
@@ -84,9 +83,6 @@
 		<script src="{{ asset('web/js/bootstrap.js') }}"></script>
 		<script src="{{ asset('web/js/custom.js') }}"></script>
 		<script src="{{ asset('web/plugins/jssocials/jssocials.js') }}"></script>
-
 	</body>
 
 </html>
-		
-	

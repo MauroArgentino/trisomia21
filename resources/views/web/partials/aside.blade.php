@@ -3,7 +3,7 @@
         
         <div class="tech-btm">
 
-            <h2>Agenda</h2>						
+            <h2>Calendario de Actividades</h2>						
         
             <div class="agenda">
                 <div class="table-responsive">
@@ -14,8 +14,7 @@
                                 <th>Evento</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <!-- Single event in a single day -->
+                        <tbody>                            
                             <tr>
                                 <td class="agenda-date" class="active" rowspan="1">
                                     <div class="dayofmonth">26</div>
@@ -30,7 +29,6 @@
                                 </td>
                             </tr>
                             
-                            <!-- Multiple events in a single day (note the rowspan) -->
                             <tr>
                                 <td class="agenda-date" class="active" rowspan="3">
                                     <div class="dayofmonth">28</div>
@@ -39,9 +37,10 @@
                                 </td>											
                                 <td class="agenda-events">
                                     <div class="agenda-event">
-                                        Salida de campo al predio
+                                        Salida de Campo al Predio
                                     </div>
-                                </td>									
+                                </td>
+                            </tr>									
                         </tbody>
                     </table>
                 </div>
@@ -51,6 +50,7 @@
         <div class="tech-btm">
             <div class="tech-btm">
                 <img src="{{ asset('web/img/P1.jpg') }}" class="card-img-top img-fluid" alt="">
+
                 <h4>Publicidad</h4>
                 <p> Lorem ipsum dolor sit amet. </p>
             </div>
@@ -118,6 +118,7 @@
 
         <div class="tech-btm">
             <div class="tech-btm">
+
                 <img src="{{ asset('web/img/P1.jpg') }}" class="card-img-top img-fluid" alt="">
                 <h4>Publicidad</h4>
                 <p> Lorem ipsum dolor sit amet. </p>

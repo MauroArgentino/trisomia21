@@ -1,13 +1,6 @@
 <?php
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+/	Agrupación de todas las rutas relacionadas a las peticiones realizadas por el usuario del dashboard
 */
 Route::group(['middleware' => 'auth'], function () {
 	Route::group(['namespace' => 'Admin'], function () {
@@ -50,8 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
 		//Ruta de recursos para Tutores
 		Route::get('admin/home/tutor/nuevo', 'TutorsController@create')->name('admin.tutor.create');
 
-
-
 		//Ruta de recursos para Voluntarios
 		Route::get('admin/home/voluntario/nuevo', 'VolunteersController@create')->name('admin.voluntario.create');
 
@@ -85,11 +76,29 @@ Route::group(['namespace' => 'Web'], function () {
 	/	Las publicaciones se retornan paginadas.
 	/	También retorna una colección de datos para la agenda, denominado $eventos.
 	*/
-	Route::get('/home', 'HomeController@index')->name('web.home');
+	Route::get('/home', 'HomeController@index')->name('web.home.index');
+
+	Route::get('/home/publicaciones', 'HomeController@publicaciones')->name('web.publicaciones.index');
 
 	Route::post('/home', 'HomeController@fetch')->name('web.home.fetch');
 
-	Route::get('/home/post/{slug}', 'HomeController@show')->name('web.post.show');
+	Route::get('/home/publicacion/{slug}', 'HomeController@show')->name('web.publicacion.show');
+
+	Route::get('/home/actividades', 'HomeController@actividades')->name('web.actividades.index');
+
+	Route::get('/home/miembros', 'HomeController@miembros')->name('web.informacion.miembros');
+
+	Route::get('/home/quienes-somos', 'HomeController@quienesSomos')->name('web.informacion.history');
+
+	Route::get('/home/registro', 'HomeController@registrarse')->name('web.home.registrarse');
+
+	Route::get('/home/voluntario', 'HomeController@voluntario')->name('web.home.voluntario');
+
+	Route::get('/home/donar', 'HomeController@donar')->name('web.home.donar');
+
+	Route::get('/home/sindrome', 'HomeController@sindrome')->name('web.sindrome.index');
+
+	Route::get('/home/contacto', 'HomeController@contacto')->name('web.home.contacto');
 
 });
 
@@ -120,6 +129,7 @@ Auth::routes();
 Route::resource('pensiones', 'Admin\PensionsController');
 Route::resource('obrassociales', 'Admin\HealthinsurancesController');
 
+
 Route::post('buscar', 'Admin\PensionsController@buscar')->name('buscar');
 
 
@@ -129,12 +139,9 @@ Route::post('buscar', 'Admin\PensionsController@buscar')->name('buscar');
 // Route::get('index', function () {
 //     return view('web.index');
 // });
-Route::get('single', function () {
-    return view('web.Blogs.single');
-});
-Route::get('blogs', function () {
-    return view('web.Blogs.blogs');
-});
+
+// Rutas para la web
+
 Route::get('forms', function () {
     return view('web.Forms.forms');
 });
@@ -150,3 +157,8 @@ Route::get('syndrome', function () {
 Route::get('contact', function () {
     return view('web.Contact.contact');
 });
+
+Route::get('activities', function () {
+    return view('web.Activities.activities');
+});
+// Route::get('post', 'Web/PostsController@post')->name('post');

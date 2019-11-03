@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Post;
+use App\Agenda;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
@@ -32,28 +33,88 @@ class HomeController extends Controller
 
     }
 
-     public function show($slug){
+    public function show($slug){
 
         $publicacion = Post::where('slug', $slug)->first();
 
-        return view('web.post.single', compact('publicacion'));
+        return view('web.publicacion.show', compact('publicacion'));
 
     }
 
     public function fetch(Request $request){
 
-        if($request->get('query'))
+        if($request->get('consulta'))
         {
-            $query = $request->get('query');
-            $data = DB::table('posts')->where('titulo', 'LIKE', '%'.$query.'%')->get();
-            $output = '<ul class="dropdown-menu" style="display:block; position:absolute; background: white;">';
-            foreach ($data as $row) {
-                $output .= '<li><a href="'.url('home/post/').'/'.$row->slug.'">'.$row->titulo.'</a></li>';
-            }
-            $output .= '</ul>';
+            $consulta = $request->get('consulta');
 
-            echo $output;
+            $resultados = DB::table('posts')->where('titulo', 'LIKE', '%'.$consulta.'%')->get();
+ 
+            $desplegable = '<ul class="dropdown-menu" style="display:block; position:absolute; background: white;">';
+
+            foreach ($resultados as $registro) {
+                $desplegable .= '<li><a href="'.url('home/publicacion/').'/'.$registro->slug.'">'.$registro->titulo.'</a></li>';
+            }
+            
+            $desplegable .= '</ul>';
+
+            echo $desplegable;
         }
+
+    }
+
+    public function actividades(){
+
+        $actividades = Agenda::orderBy('updated_at', 'DESC')->get();
+
+        return view('web.actividades.index', compact('actividades'));
+
+    }
+
+    public function miembros(){
+
+        return view('web.informacion.miembros');
+
+    }
+
+    public function quienesSomos(){
+
+        return view('web.informacion.history');
+
+    }
+
+    public function donar(){
+
+        return view('web.formulario.index');
+
+    }
+
+    public function voluntario(){
+
+        return view('web.formulario.index');
+
+    }
+
+    public function registrarse(){
+
+        return view('web.formulario.index');
+
+    }
+
+    public function sindrome(){
+
+        return view('web.sindrome.index');
+
+    }
+
+    public function publicaciones(){
+
+        return view('web.publicacion.index');
+
+    }
+
+    public function contacto(){
+
+        return view('web.contacto.index');
 
     }
 

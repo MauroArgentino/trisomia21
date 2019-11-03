@@ -76,6 +76,7 @@
 								<li>
 									<a href="#">
 										<i class="far fa-calendar-alt"></i> {{ $publicacion->updated_at->toFormattedDateString() }}</a>
+
 								</li>	
 								<li class="mx-2">
 									<a href="#">
@@ -83,10 +84,10 @@
 								</li>								
 							</ul>
 							<h5 class="card-title ">
-								<a href="single">{{ $publicacion->titulo}}</a>
+								<a href="{{ route('web.publicacion.show', $publicacion->slug) }}">{{ $publicacion->titulo}}</a>
 							</h5>
 							<p class="card-text mb-3">{{ $publicacion->contenido }}</p>
-							<a href="{{ route('web.post.show', $publicacion->slug ) }}" class="btn btn-primary read-m">Leer más</a>
+							<a href="{{ route('web.publicacion.show', $publicacion->slug ) }}" class="btn btn-primary read-m">Leer más</a>
 						</div>
 					</div>
 					@endforeach
@@ -94,7 +95,7 @@
 				</div>
 
 				{{ $publicaciones->links() }}
-				
+
 			</div>
 			<!--//left-->
 			<!--right-->
@@ -106,4 +107,3 @@
 <!--//main-->
 
 @endsection
-
