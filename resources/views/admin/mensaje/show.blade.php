@@ -17,7 +17,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-            <a href="{{ route('admin.bandejaentrada') }}" class="btn btn-primary btn-block mb-3">Volver a la Bandeja de Entrada</a>
+            <a href="{{ route('admin.mensaje.index') }}" class="btn btn-primary btn-block mb-3">Volver a la Bandeja de Entrada</a>
 
             <div class="card">
               <div class="card-header">

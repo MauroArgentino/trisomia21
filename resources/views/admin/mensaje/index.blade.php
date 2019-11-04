@@ -97,12 +97,12 @@
                    <tr>
                     <td>
                       <div class="icheck-primary">
-                        <input type="checkbox" value="" id="">
-                        <label for="check15"></label>
+                        <input type="checkbox" value="" id="check{{$mensaje->id}}">
+                        <label for="check{{$mensaje->id}}"></label>
                       </div>
                     </td>
                     <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                    <td class="mailbox-name"><a href="{{ route ('admin.leermensaje', $mensaje->id) }}">{{$mensaje->apellido_y_nombres}}</a></td>
+                    <td class="mailbox-name"><a href="{{ route ('admin.mensaje.show', $mensaje->id) }}">{{$mensaje->apellido_y_nombres}}</a></td>
                     <td class="mailbox-subject">
                       @if ($mensaje->estado === 'NO_LEIDO')
                         <b>

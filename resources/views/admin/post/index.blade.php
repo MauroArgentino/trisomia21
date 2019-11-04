@@ -45,7 +45,7 @@ Listado de Publicaciones</h1></div>{{-- <div class="float-right">{{ $publicacion
                             <tr class="item{{$publicacion->id}} @if($publicacion->estado) warning @endif">
                                 <td>{{$publicacion->id}}</td>
                                 <td>
-                                    <a href="{{ route('web.publicacion.show', $publicacion->slug) }}">
+                                    <a href="{{ route('web.publicacion.show', $publicacion->slug) }}" target="_blank">
                                     {{$publicacion->titulo}}</a>
                                 </td>
                                 {{-- <td>

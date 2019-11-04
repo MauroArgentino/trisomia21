@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::get('admin/home/bandejaentrada', 'MensajesController@index')->name('admin.mensaje.index');
 
-		Route::get('admin/home/bandejaentrada/mensaje/{id}', 'MensajesController@show')->name('admin.leermensaje')->middleware();
+		Route::get('admin/home/bandejaentrada/mensaje/{id}', 'MensajesController@show')->name('admin.mensaje.show')->middleware();
 
 		// Rutas de Eventos (Agenda)
 

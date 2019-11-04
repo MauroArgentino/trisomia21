@@ -55,7 +55,7 @@ class MensajesController extends Controller
     {
         $mensaje = Mensaje::find($id);
 
-        return view('admin.mensaje.leermensaje', compact('mensaje'));
+        return view('admin.mensaje.show', compact('mensaje'));
     }
 
     /**
