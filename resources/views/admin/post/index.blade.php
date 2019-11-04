@@ -33,7 +33,7 @@ Listado de Publicaciones</h1></div>{{-- <div class="float-right">{{ $publicacion
                         <tr>
                             <th valign="middle">ID</th>
                             <th>Título</th>
-                            <th>Contenido</th>
+                           {{--  <th>Contenido</th> --}}
                             <th>Publicado?</th>
                             <th>Última actualización</th>
                             <th>Acciones</th>
@@ -44,10 +44,13 @@ Listado de Publicaciones</h1></div>{{-- <div class="float-right">{{ $publicacion
                         @foreach($publicaciones as $publicacion)
                             <tr class="item{{$publicacion->id}} @if($publicacion->estado) warning @endif">
                                 <td>{{$publicacion->id}}</td>
-                                <td>{{$publicacion->titulo}}</td>
                                 <td>
-                                    {!! App\Post::getExcerpt($publicacion->contenido) !!}
+                                    <a href="{{ route('web.publicacion.show', $publicacion->slug) }}">
+                                    {{$publicacion->titulo}}</a>
                                 </td>
+                                {{-- <td>
+                                    {!! App\Post::getExcerpt($publicacion->contenido) !!}
+                                </td> --}}
                                 <td class="text-center">
                                     <div class="icheck-concrete">
                                     <input type="checkbox" class="published" id="check{{$publicacion->id}}" data-id="{{$publicacion->id}}" @if ($publicacion->estado == 'PUBLISHED') checked @endif>
