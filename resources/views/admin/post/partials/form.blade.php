@@ -33,9 +33,9 @@
             <textarea type="" class="form-control" id="textareaExtracto" name="extracto" placeholder="Ingrese un extracto breve para la imagen" rows="5"></textarea>
           </div>
 
-          <div class="form-check">
+          <div class="icheck-primary">
               <input type="checkbox" class="form-check-input" id="checkboxEstado" name="estado">
-              <label class="form-check-label" for="labelPublicar">Publicar</label>
+              <label class="form-check-label" for="checkboxEstado">Publicar</label>
             </div>
 
           {{-- </div> --}}

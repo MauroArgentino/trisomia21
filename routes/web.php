@@ -13,6 +13,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::post('admin/home/post/nuevo', 'PostsController@store')->name('admin.post.store');
 
+		Route::post('admin/home/post/editar/{id}', 'PostsController@edit')->name('admin.post.edit');
+
 		Route::delete('admin/home/post/listado/{id}', 'PostsController@destroy')->name('admin.post.destroy');
 
 		Route::get('admin/home', 'HomeController@index')->name('admin.home');
@@ -90,6 +92,8 @@ Route::group(['namespace' => 'Web'], function () {
 	Route::get('/home', 'HomeController@index')->name('web.home.index');
 
 	Route::get('/home/publicaciones', 'HomeController@publicaciones')->name('web.publicaciones.index');
+
+	Route::get('/home/publicaciones/{slug}', 'HomeController@etiqueta')->name('web.publicaciones.tag');
 
 	Route::post('/home', 'HomeController@fetch')->name('web.home.fetch');
 

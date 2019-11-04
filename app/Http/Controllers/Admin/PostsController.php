@@ -21,7 +21,7 @@ class PostsController extends Controller
 
     public function index(){
 
-        $publicaciones = Post::orderBy('id', 'DESC')->paginate(100);
+        $publicaciones = Post::orderBy('id', 'DESC')->paginate(10);
         
         return view('admin.post.index', compact('publicaciones'));
 
@@ -30,6 +30,14 @@ class PostsController extends Controller
     public function create(){
 
         return view('admin.post.create');
+
+    }
+
+    public function edit($id){
+
+        $publicacion = Post::find($id);
+
+        return view('admin.post.edit', compact('publicacion'));
 
     }
 

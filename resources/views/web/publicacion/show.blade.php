@@ -38,6 +38,11 @@
 					</h5>
 					<p class="card-text mb-3"> {!! $publicacion->contenido !!} </p>
 					
+					<span><i class="fa fa-tag"></i> Etiquetas
+						@foreach ($publicacion->tags as $tag)
+							<a href="{{ route('web.publicaciones.tag', $tag->slug) }}" class="badge badge-info">{{$tag->name}}</a>
+						@endforeach
+					</span>
 				</div>
 				<div id="share"></div>
 			</div>

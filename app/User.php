@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Str;
 
 class User extends Authenticatable
 {
@@ -50,5 +51,14 @@ class User extends Authenticatable
     public function mensajes(){
         // return $this->hasMany('Post', 'user_modified_id', 'id');
         return $this->hasMany(Mensaje::class);
+    }
+
+   protected static function boot() {
+        parent::boot();
+
+        static::creating(function ($question) {
+            $question->slug = Str::slug($question->name);
+            $question->remember_token = Str::random(10);
+        });
     }
 }
