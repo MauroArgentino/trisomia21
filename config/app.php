@@ -229,7 +229,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Toastr' => TJGazel\Toastr\Facades\Toastr::class
+        'Toastr' => TJGazel\Toastr\Facades\Toastr::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ],
 
 ];

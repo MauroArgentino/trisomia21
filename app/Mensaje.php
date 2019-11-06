@@ -12,4 +12,12 @@ class Mensaje extends Model
     public function user() {
     	$this->belongsTo(User::class);
     }
+
+    protected static function boot() {
+        parent::boot();
+
+        static::creating(function ($question) {
+            $question->ubicacion = 'INBOX';
+        });
+    }
 }

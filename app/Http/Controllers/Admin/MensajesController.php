@@ -89,6 +89,11 @@ class MensajesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mensaje = Mensaje::find($id);
+
+        $mensaje->delete();
+
+        return redirect('admin/home/bandejaentrada')->with('status', 'El mensaje ha sido eliminado con éxito.');
+
     }
 }

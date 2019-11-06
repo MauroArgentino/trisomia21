@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Web;
 
 use App\Post;
 use App\Agenda;
+use App\Mensaje;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MensajeStoreRequest;
 use DB;
 
 class HomeController extends Controller
@@ -115,6 +117,14 @@ class HomeController extends Controller
     public function contacto(){
 
         return view('web.contacto.index');
+
+    }
+
+    public function mensajeStore(MensajeStoreRequest $request){
+
+        Mensaje::create($request->all());
+
+        return redirect()->route('web.home.contacto')->with('success','Registro creado satisfactoriamente');
 
     }
 

@@ -19,7 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::get('admin/home', 'HomeController@index')->name('admin.home');
 
-		Route::post('admin/home/contacto', 'MensajesController@store')->name('admin.mensajes.store');
+		
 
 		Route::get('admin/home/bandejaentrada', 'MensajesController@index')->name('admin.mensaje.index');
 
@@ -114,6 +114,8 @@ Route::group(['namespace' => 'Web'], function () {
 	Route::get('/home/sindrome', 'HomeController@sindrome')->name('web.sindrome.index');
 
 	Route::get('/home/contacto', 'HomeController@contacto')->name('web.home.contacto');
+
+	Route::post('home/contacto', 'HomeController@mensajeStore')->name('web.mensaje.store');
 
 });
 

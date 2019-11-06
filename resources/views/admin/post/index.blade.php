@@ -68,7 +68,7 @@ Listado de Publicaciones</h1></div>{{-- <div class="float-right">{{ $publicacion
                                         <span class="fa fa-edit"></span></a>
                                         @csrf
                                         @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" data-toggle="tooltip" title="Eliminar">
+                                    <button type="submit" class="btn btn-danger submitEliminar" data-toggle="tooltip" title="Eliminar">
                                     <span class="fa fa-trash"></span></button>
                                     </form>
                                 </td>

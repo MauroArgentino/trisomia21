@@ -4,12 +4,11 @@
 
 <section class="main-content-w3layouts-agileits">
 	<div class="container">
-		
+		@if (isset($publicacion))
 		<div class="row inner-sec">
 			<!--left-->
 			<div class="col-md-8 card">
 				<h3 class="tittle">Blog Post</h3>
-				<a href="#">
 					@if ( Str::contains($publicacion->ruta_imagen, "lorem") )
 					<a data-fancybox="images" data-caption="{{ $publicacion->extracto }}" href="{{$publicacion->ruta_imagen}}">
 								<img src="{{$publicacion->ruta_imagen}}" class="card-img-top img-fluid" alt="">
@@ -51,6 +50,14 @@
 				@include('web.partials.aside')
 				<!--//right-->
 			</div>
+
+ @else
+ <div class="row inner-sec">
+	<div class="col-md-8">La publicación a la que está intentando acceder no existe.</div>
+
+	@include('web.partials.aside')
+	</div>
+ @endif
 	</div>
 </section>
 

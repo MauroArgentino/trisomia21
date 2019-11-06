@@ -32,6 +32,8 @@
 			rel="stylesheet"> --}}
 		{{-- <link href="//fonts.googleapis.com/css?family=Signika:400,600,700&display=swap" rel="stylesheet"> --}}
 		<link href="//fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+
+		<link href="{{ asset('web/css/custom.css') }}" rel='stylesheet'>
 <body>
 		<header>
 			<section class="">

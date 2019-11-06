@@ -39,5 +39,7 @@
 <link rel="stylesheet" href="{{asset('dashboard/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}">
 <!-- Bootstrap FileInput -->
 <link rel="stylesheet" href="{{asset('dashboard/plugins/bootstrap-fileinput/css/fileinput.css') }}">
+<!-- Bootstrap FileInput -->
+<link rel="stylesheet" href="{{asset('dashboard/plugins/sweetalert2/sweetalert2.css') }}">
 <!-- Estilo Personalizado -->
 <link rel="stylesheet" href="{{asset('dashboard/dist/css/custom.css') }}">

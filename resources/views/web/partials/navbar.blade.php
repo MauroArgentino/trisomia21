@@ -12,7 +12,7 @@
 	</ul>
 </nav>
 
-<nav class="navbar navbar-expand-md navbar-nav mr-auto navbar-dark bg-primary" aria-label="breadcrumb">
+<nav class="navbar navbar-expand-md navbar-nav mr-auto navbar-dark bg-primary shift" aria-label="breadcrumb">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -28,9 +28,8 @@
 					Quienes Somos
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#"></a>
 					<a class="dropdown-item" href="{{ route('web.informacion.history') }}">Historia</a>
-					<div class="dropdown-divider"></div>
+					
 					<a class="dropdown-item" href="{{ route('web.informacion.miembros') }}">Nomina de integrantes</a>
 					
 
@@ -38,14 +37,13 @@
 			</li>
 			<li class="nav-item dropdown active">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">
+					aria-expanded="true">
 					Actividades y Noticias
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					{{-- <a class="dropdown-item" href="#"></a> --}}
 
 					<a class="dropdown-item" href="{{ route('web.actividades.index') }}">Actividades</a>
-					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="{{ route('web.publicaciones.index') }}">Noticias</a>
 					
 
@@ -59,11 +57,9 @@
 				Forma Parte
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#"></a>
 					<a class="dropdown-item" href="{{ route('web.home.registrarse') }}">Registro</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="{{ route('web.home.voluntario') }}">Ser Voluntario</a>
-					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="{{ route('web.home.donar') }}">Donar</a>
 
 				</div>

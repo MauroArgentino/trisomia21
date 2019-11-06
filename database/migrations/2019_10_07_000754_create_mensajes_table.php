@@ -20,6 +20,7 @@ class CreateMensajesTable extends Migration
             $table->string('asunto');
             $table->mediumtext('mensaje');
             $table->enum('estado', ['LEIDO', 'NO_LEIDO'])->default('NO_LEIDO');
+            $table->enum('ubicacion', ['INBOX', 'TRASH']);
             $table->unsignedBigInteger('user_read_id')->nullable();
             $table->timestamps();
 
