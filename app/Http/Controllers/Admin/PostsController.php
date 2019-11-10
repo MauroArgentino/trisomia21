@@ -106,16 +106,34 @@ class PostsController extends Controller
         return redirect('admin/home/post/listado')->with('status', 'La publicación se ha editado satisfactoriamente.');
     }
 
-    public function destroy($id) {
-        $publicacion = Post::findOrFail($id);
+    public function destroy($id, Request $request) {
+        
+       $publicacion = Post::findOrFail($id);
 
-        if (Storage::disk('public')->exists("images/posts/$publicacion->ruta_imagen")){
-            Storage::disk('public')->delete("images/posts/$publicacion->ruta_imagen");
+       if($publicacion) {
+            if (Storage::disk('public')->exists("images/posts/$publicacion->ruta_imagen")){
+                Storage::disk('public')->delete("images/posts/$publicacion->ruta_imagen");
+            }
+
+            $publicacion->delete();
+
+            if($request->ajax()){
+                return response()->json([
+                        'mensaje' => "La publicacion $publicacion->id ha sido eliminada."]);
+            }
+
         }
-
-        $publicacion->delete();
-
         return redirect('admin/home')->with('status', 'La publicación ha sido eliminada con éxito.');
+
+    }
+
+    public function fetch_data(Request $request) {
+
+        if ($request->ajax()) {
+             $publicaciones = Post::orderBy('id', 'DESC')->paginate(10);
+        
+        return view('admin.post.partials.tabla', compact('publicaciones'))->render();
+        }
     }
 
 }

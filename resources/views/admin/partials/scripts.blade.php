@@ -44,9 +44,6 @@
 <script src="{{ asset('dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 <!-- Toastr -->
 <script src="{{ asset('dashboard/plugins/sweetalert2/sweetalert2.all.js') }}"></script>
-
-<!-- Scripts personalizados -->
-<script src="{{ asset('dashboard/dist/js/custom.js') }}"></script>
 @if (Session::has('notificacion'))
     <script>
         $(document).ready(function() {

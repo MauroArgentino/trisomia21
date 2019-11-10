@@ -94,8 +94,12 @@
             </div> --}}
             <!-- /.card-footer -->
             <div class="card-footer">
-              <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Eliminar</button>
+              <form action="{{ route('admin.mensaje.destroy', $mensaje->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+              <button type="submit" class="btn btn-default submitEliminar"><i class="far fa-trash-alt"></i> Eliminar</button>
               <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Imprimir</button>
+              </form>
             </div>
             <!-- /.card-footer -->
           </div>

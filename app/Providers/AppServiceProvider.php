@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
+use App\Mensaje;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**

@@ -5,9 +5,13 @@
 Route::group(['middleware' => 'auth'], function () {
 	Route::group(['namespace' => 'Admin'], function () {
 
+		Route::get('admin/home', 'HomeController@index')->name('admin.home');
+
 		// Rutas de Publicaciones (Posts)
 
 		Route::get('admin/home/post/listado', 'PostsController@index')->name('admin.post.index');
+		
+		Route::get('admin/home/post/listado/paginacion', 'PostsController@fetch_data');
 
 		Route::get('admin/home/post/nuevo', 'PostsController@create')->name('admin.post.create');
 
@@ -17,13 +21,18 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::delete('admin/home/post/listado/{id}', 'PostsController@destroy')->name('admin.post.destroy');
 
-		Route::get('admin/home', 'HomeController@index')->name('admin.home');
-
-		
+		// Rutas del Inbox de la administración
 
 		Route::get('admin/home/bandejaentrada', 'MensajesController@index')->name('admin.mensaje.index');
 
-		Route::get('admin/home/bandejaentrada/mensaje/{id}', 'MensajesController@show')->name('admin.mensaje.show')->middleware();
+		Route::get('admin/home/notificaciones', function(){
+			$cantidad_mensajes = Mensaje::where('estado', 'NO_LEIDO')->count();
+			return $cantidad_mensajes;
+		})->name('admin.mensaje.notificaciones');
+
+		Route::get('admin/home/bandejaentrada/mensaje/{id}', 'MensajesController@show')->name('admin.mensaje.show');
+
+		Route::delete('admin/home/bandejaentrada/mensaje/{id}', 'MensajesController@destroy')->name('admin.mensaje.destroy');
 
 		// Rutas de Eventos (Agenda)
 

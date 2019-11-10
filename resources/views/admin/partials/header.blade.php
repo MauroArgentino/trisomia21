@@ -87,7 +87,7 @@
       </li> --}}
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
+        <a id="notificacionMensajeSolicitud" class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-bell"></i>
           @if ($cantidad_mensajes ?? '' > 0)
           <span class="badge badge-danger navbar-badge">{{ $cantidad_mensajes ?? '' }}</span>
@@ -102,7 +102,7 @@
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-3"></i> 8 Solicitud Preinscripción
+            <i class="fas fa-users mr-3"></i> 0 Solicitud Preinscripción
             <span class="float-right text-muted text-sm">12 hs</span>
           </a>          
         </div>

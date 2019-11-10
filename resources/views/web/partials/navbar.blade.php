@@ -58,7 +58,6 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="{{ route('web.home.registrarse') }}">Registro</a>
-					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="{{ route('web.home.voluntario') }}">Ser Voluntario</a>
 					<a class="dropdown-item" href="{{ route('web.home.donar') }}">Donar</a>
 
@@ -70,7 +69,7 @@
 		</ul>
 		<form action="#" method="post" class="form-inline my-2 ml-md-0 header-search navbar-nav mr-auto">
 			<div class="form-group">
-			<input class="form-control mr-sm-2" style="border-radius: 5rem;" type="search" placeholder="Buscar" name="sugerirPublicacion" required="" id="sugerirPublicacion">
+			<input class="form-control mr-sm-2" {{-- style="border-radius: 5rem;" --}} type="search" placeholder="Buscar" name="sugerirPublicacion" required="" id="sugerirPublicacion">
 			<button class="btn btn1 ml-3 ml-sm-0" type="submit">
 				<i class="fas fa-search"></i>
 			</button>

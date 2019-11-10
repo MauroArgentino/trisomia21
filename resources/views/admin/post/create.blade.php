@@ -31,3 +31,26 @@
     </section>
     <!-- /.content -->
 @endsection
+
+@section('scripts')
+<!-- Bootstrap FileInput -->
+<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/fileinput.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/locales/es.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/themes/fas/theme.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/plugins/piexif.js') }}"></script>
+<script>
+$(document).ready(function () {
+  $("#imagen").fileinput({
+              language: "es",
+              // allowedFileExtensions: ['jpg', 'jpeg', 'png'],
+              // maxFileSize: 1000,
+              // maxFileCount: 1,
+              // showUpload: false,
+              // showClose: false,
+              // initialPreviewAsData: true,
+              // dropZoneEnabled: true,
+              // theme: 'fas',        
+    });
+});
+</script>
+@endsection

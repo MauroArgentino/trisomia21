@@ -24,7 +24,7 @@
 		<link href="{{ asset('web/css/style.css') }}" rel='stylesheet'>
 		<link href="{{ asset('web/css/fontawesome-all.css') }}" rel="stylesheet">
 		<link href="{{ asset('web/plugins/jssocials/jssocials.css') }}" rel="stylesheet">
-		<link href="{{ asset('web/plugins/jssocials/jssocials-theme-classic.css') }}" rel="stylesheet">
+		<link href="{{ asset('web/plugins/jssocials/jssocials-theme-flat.css') }}" rel="stylesheet">
 		<link href="{{ asset('web/plugins/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
 
 		{{--  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> --}}
