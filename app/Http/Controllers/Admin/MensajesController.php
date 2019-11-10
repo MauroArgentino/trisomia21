@@ -96,4 +96,10 @@ class MensajesController extends Controller
         return redirect('admin/home/bandejaentrada')->with('status', 'El mensaje ha sido eliminado con éxito.');
 
     }
+
+    public function notificaciones() {
+         $cantidad_mensajes = Mensaje::where('estado', 'NO_LEIDO')->count();
+
+         return $cantidad_mensajes;
+    }
 }

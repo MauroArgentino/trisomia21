@@ -25,10 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Route::get('admin/home/bandejaentrada', 'MensajesController@index')->name('admin.mensaje.index');
 
-		Route::get('admin/home/notificaciones', function(){
-			$cantidad_mensajes = Mensaje::where('estado', 'NO_LEIDO')->count();
-			return $cantidad_mensajes;
-		})->name('admin.mensaje.notificaciones');
+		Route::get('admin/home/notificaciones', 'MensajesController@notificaciones')->name('admin.mensaje.notificaciones');
 
 		Route::get('admin/home/bandejaentrada/mensaje/{id}', 'MensajesController@show')->name('admin.mensaje.show');
 

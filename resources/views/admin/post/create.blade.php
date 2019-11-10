@@ -33,6 +33,11 @@
 @endsection
 
 @section('scripts')
+<!-- Summernote -->
+<script src="{{ asset('dashboard/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/summernote/lang/summernote-es-ES.js') }}"></script>
+
+<script src="{{ asset('dashboard/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js') }}"></script>
 <!-- Bootstrap FileInput -->
 <script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/fileinput.min.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/locales/es.js') }}"></script>
@@ -40,17 +45,43 @@
 <script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/plugins/piexif.js') }}"></script>
 <script>
 $(document).ready(function () {
+
+    var textoAyuda;
+
+    if ( document.getElementById( "inputTituloPublicacion" )) {
+      textoAyuda =  "Ingrese la descripción de la publicación";
+    } else {
+      textoAyuda =  "Ingrese la descripción del evento";
+    }
+
   $("#imagen").fileinput({
               language: "es",
-              // allowedFileExtensions: ['jpg', 'jpeg', 'png'],
-              // maxFileSize: 1000,
-              // maxFileCount: 1,
-              // showUpload: false,
-              // showClose: false,
-              // initialPreviewAsData: true,
-              // dropZoneEnabled: true,
-              // theme: 'fas',        
+              allowedFileExtensions: ['jpg', 'jpeg', 'png'],
+              maxFileSize: 1000,
+              maxFileCount: 1,
+              showUpload: false,
+              showClose: false,
+              initialPreviewAsData: true,
+              dropZoneEnabled: true,
+              theme: 'fas',        
     });
+
+     $('#textareaContenido').summernote({
+      placeholder: textoAyuda,
+      tabsize: 2,
+      height: 200,
+      lang: 'es-ES',
+      toolbar: [
+        // [groupName, [list of button]]
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']]
+        ]
+    });
+
 });
 </script>
 @endsection

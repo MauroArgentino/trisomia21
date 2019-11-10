@@ -18,22 +18,6 @@ $(document).ready(function () {
       textoAyuda =  "Ingrese la descripción del evento";
     }
 
-    $('#textareaContenido').summernote({
-      placeholder: textoAyuda,
-      tabsize: 2,
-      height: 200,
-      lang: 'es-ES',
-      toolbar: [
-        // [groupName, [list of button]]
-        ['style', ['bold', 'italic', 'underline', 'clear']],
-        ['font', ['strikethrough', 'superscript', 'subscript']],
-        ['fontsize', ['fontsize']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['height', ['height']]
-        ]
-    });
-
     $('#example1').DataTable();
     $('.js-example-basic-multiple').select2();
 

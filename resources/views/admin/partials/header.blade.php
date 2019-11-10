@@ -89,9 +89,7 @@
       <li class="nav-item dropdown">
         <a id="notificacionMensajeSolicitud" class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-bell"></i>
-          @if ($cantidad_mensajes ?? '' > 0)
-          <span class="badge badge-danger navbar-badge">{{ $cantidad_mensajes ?? '' }}</span>
-          @endif
+          <span id="globoNotificacion" class="badge badge-danger navbar-badge" style="display:none;"></span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">{{ $cantidad_mensajes ?? '' }} Notificaciones</span>

@@ -107,7 +107,7 @@ class PostsController extends Controller
     }
 
     public function destroy($id, Request $request) {
-        
+
        $publicacion = Post::findOrFail($id);
 
        if($publicacion) {
@@ -123,7 +123,6 @@ class PostsController extends Controller
             }
 
         }
-        return redirect('admin/home')->with('status', 'La publicación ha sido eliminada con éxito.');
 
     }
 

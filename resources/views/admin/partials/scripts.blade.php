@@ -29,11 +29,7 @@
 <script src="{{ asset('dashboard/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js') }}"></script>
 <!-- InputMask -->
 <script src="{{ asset('dashboard/plugins/inputmask/jquery.inputmask.bundle.js') }}"></script>
-<!-- Bootstrap FileInput -->
-<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/fileinput.min.js') }}"></script>
-<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/locales/es.js') }}"></script>
-<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/themes/fas/theme.min.js') }}"></script>
-<script src="{{ asset('dashboard/plugins/bootstrap-fileinput/js/plugins/piexif.js') }}"></script>
+
 <!-- Toastr -->
 <script src="{{ asset('dashboard/plugins/toastr/toastr.min.js') }}"></script>
 
@@ -44,6 +40,19 @@
 <script src="{{ asset('dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 <!-- Toastr -->
 <script src="{{ asset('dashboard/plugins/sweetalert2/sweetalert2.all.js') }}"></script>
+<script>
+$(document).ready(function() {
+	$("#notificacionMensajeSolicitud").ready(function() {
+		var url = "{{ route('admin.mensaje.notificaciones')}}";
+
+		$.get(url, function(resultado) {
+			if(resultado > 0) {
+				$("#globoNotificacion").show().text(resultado);
+			}
+		});
+	});
+});
+</script>
 @if (Session::has('notificacion'))
     <script>
         $(document).ready(function() {
